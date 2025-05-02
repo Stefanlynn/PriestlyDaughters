@@ -78,6 +78,13 @@
     touch-action: pan-y; /* Optimize touch interactions */
   }
   
+  /* Add padding for safe area and better mobile layout */
+  @supports (padding-top: env(safe-area-inset-top)) {
+    .bg-soft-pink {
+      padding-top: calc(1.5rem + env(safe-area-inset-top)) !important;
+    }
+  }
+  
   /* This helps with scroll jank on mobile */
   * {
     -webkit-tap-highlight-color: transparent;

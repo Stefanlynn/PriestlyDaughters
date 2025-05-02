@@ -31,11 +31,11 @@ const About: React.FC = () => {
       <Header />
       
       {/* Hero section with pink background and rotating images - inspired by katieobrien.com */}
-      <section className="bg-soft-pink py-16 md:py-28">
+      <section className="bg-soft-pink pt-24 pb-16 md:py-28">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12">
             {/* Image gallery with rotation effect */}
-            <div className="w-full md:w-1/2 mb-8 md:mb-0 relative overflow-hidden" style={{ height: '500px' }}>
+            <div className="w-full md:w-1/2 mb-8 md:mb-0 relative overflow-hidden mt-4 md:mt-0" style={{ height: '500px' }}>
               <div className="rounded-xl overflow-hidden shadow-xl h-full relative">
                 {/* Main image with animation */}
                 <AnimatePresence mode="wait">
