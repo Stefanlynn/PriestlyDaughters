@@ -109,6 +109,60 @@ const About: React.FC = () => {
                 My family is currently transitioning to beautiful Colorado Springs, eagerly anticipating all that God has in store for this next chapter. I invite you to journey with me as we grow deeper in faith, family, and purpose.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Family photo section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="relative rounded-xl overflow-hidden shadow-xl">
+              <img 
+                src="/images/powellfam-5.JPG" 
+                alt="Elizabeth and family together by a fountain" 
+                className="w-full h-auto" 
+              />
+              {/* Subtle decorative elements */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-40"></div>
+              <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-soft-pink/20 rounded-full"></div>
+              <div className="absolute -top-3 -left-3 w-16 h-16 border border-soft-pink/30 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* About Priestly Daughters Section */}
+      <section className="py-20 md:py-28 bg-soft-pink/40">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-cursive text-charcoal text-center mb-16">About Priestly Daughters</h2>
+            
+            <div className="prose prose-lg mx-auto relative">
+              {/* Subtle decorative element */}
+              <div className="absolute -left-4 md:-left-16 top-0 h-full w-px bg-tan-dark/10"></div>
+              
+              <p className="mb-8 text-charcoal/90 leading-relaxed">
+                Priestly Daughters is more than a ministry—it's a spiritual sanctuary. A space where women are set apart, strengthened, and empowered to walk boldly in their God-given identity.
+              </p>
+              
+              <p className="mb-8 text-charcoal/90 leading-relaxed">
+                Rooted in the call to "be holy, for I am holy," this movement exists to guide women into deeper spiritual maturity, helping them discover their divine purpose and embrace the beauty of consecrated living.
+              </p>
+              
+              <p className="mb-8 text-charcoal/90 leading-relaxed">
+                We believe every daughter of God carries a unique mantle—marked by grace, set apart in worship, and designed to reflect His presence in the earth. At Priestly Daughters, we equip women to walk in that mantle with confidence, clarity, and conviction.
+              </p>
+              
+              <p className="mb-8 text-charcoal/90 leading-relaxed">
+                Through teaching, prayer, community, and prophetic encouragement, women are not only transformed—they become vessels through which God's presence flows. This is a place to grow, to rise, and to become everything He has destined you to be.
+              </p>
+              
+              <div className="my-14 text-center">
+                <p className="text-xl md:text-2xl text-tan-dark font-cursive mb-2">Welcome to Priestly Daughters.</p>
+                <p className="text-lg text-charcoal/80 italic">A place of holiness, identity, and purpose.</p>
+              </div>
+            </div>
             
             {/* Decorative element at bottom */}
             <div className="flex justify-center mt-16">
