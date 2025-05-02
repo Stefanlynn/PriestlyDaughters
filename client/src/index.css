@@ -193,3 +193,9 @@
   background-color: #000000 !important;
   z-index: 9999 !important;
 }
+
+/* Video fade transition for smoother looping */
+.transition-opacity {
+  transition: opacity 300ms ease-in-out;
+  will-change: opacity;
+}
