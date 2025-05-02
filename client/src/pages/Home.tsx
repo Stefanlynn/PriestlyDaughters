@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import BlogSection from '../components/BlogSection';
+import { Link } from 'wouter';
 
 const Home = () => {
   return (
@@ -106,9 +107,11 @@ const Home = () => {
           
           {/* Centered button below content */}
           <div className="mt-16 text-center">
-            <button className="px-8 py-3 bg-white text-charcoal rounded-full shadow-md hover:shadow-lg transition-all border border-tan-dark/20">
-              Meet Elizabeth
-            </button>
+            <Link href="/about">
+              <div className="inline-block px-8 py-3 bg-white text-charcoal rounded-full shadow-md hover:shadow-lg transition-all border border-tan-dark/20 cursor-pointer">
+                Meet Elizabeth
+              </div>
+            </Link>
           </div>
         </div>
       </section>
