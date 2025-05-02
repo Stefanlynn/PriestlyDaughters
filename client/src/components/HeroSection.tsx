@@ -50,13 +50,13 @@ const HeroSection: React.FC = () => {
       {/* Content */}
       <div className="relative z-30 min-h-screen flex items-center justify-center">
         <div className="text-center flex flex-col items-center">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-cursive text-white tracking-wider mb-10 drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-cursive text-white tracking-wider mb-8 drop-shadow-lg">
             Priestly Daughters
           </h1>
           
           <button 
             onClick={scrollToFirstSection}
-            className="mt-8 animate-bounce bg-transparent border-none cursor-pointer"
+            className="animate-bounce-slow bg-transparent border-none cursor-pointer"
             aria-label="Scroll to content"
           >
             <svg 
@@ -69,7 +69,7 @@ const HeroSection: React.FC = () => {
               strokeWidth="2" 
               strokeLinecap="round" 
               strokeLinejoin="round" 
-              className="text-white hover:text-white/80 transition-colors"
+              className="h-12 w-12 text-white hover:text-white/80 transition-colors"
             >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
