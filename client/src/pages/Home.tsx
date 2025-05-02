@@ -2,8 +2,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import BlogSection from '../components/BlogSection';
-import SubscribeSection from '../components/SubscribeSection';
-import OptimizedImage from '../components/OptimizedImage';
+import BasicSubscribeSection from '../components/BasicSubscribeSection';
 import { Link } from "wouter";
 
 const Home = () => {
@@ -95,13 +94,13 @@ const Home = () => {
             <div className="md:w-1/2">
               <div className="relative">
                 <div className="relative rounded-lg overflow-hidden w-full max-w-md mx-auto shadow-xl">
-                  {/* Using OptimizedImage component for better loading */}
+                  {/* Standard image with overlay */}
                   <div className="relative">
-                    <OptimizedImage 
+                    <img 
                       src="/images/powellfam-16.JPG" 
                       alt="Elizabeth Powell" 
                       className="w-full"
-                      priority={true}
+                      loading="eager"
                     />
                     {/* Black overlay */}
                     <div className="absolute inset-0 bg-black opacity-20 mix-blend-multiply"></div>
@@ -165,7 +164,7 @@ const Home = () => {
       <BlogSection />
       
       {/* Subscribe Section */}
-      <SubscribeSection />
+      <BasicSubscribeSection />
       
       {/* Footer */}
       <Footer />
