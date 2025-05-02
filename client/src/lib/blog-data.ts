@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/blog-1.jpg",
     slug: "when-you-feel-called-but-unqualified",
     content: `
-1. When You Feel Called, But Unqualified
+When You Feel Called, But Unqualified
 
 You feel it in your spirit—this pull toward more.
 Maybe it's starting that thing God's been whispering to you about.
@@ -57,7 +57,7 @@ You're called—and that's enough.
     coverImage: "/images/blog/blog-2.jpg",
     slug: "the-sacred-work-of-slowing-down",
     content: `
-2. The Sacred Work of Slowing Down
+The Sacred Work of Slowing Down
 
 Let's be honest: as women, we carry a lot.
 We manage homes, raise children, lead teams, care for communities, support our spouses, show up for our churches—and still try to carve out time for ourselves.
@@ -92,7 +92,7 @@ And know that slowing down doesn't stop your progress—it strengthens it.
     coverImage: "/images/blog/blog-3.jpg",
     slug: "becoming-her",
     content: `
-3. Becoming Her: The Journey Between Who You Were and Who You're Becoming
+Becoming Her: The Journey Between Who You Were and Who You're Becoming
 
 There's a version of you that God is shaping—strong, steady, full of wisdom, confident in your identity, and clear about your calling.
 
@@ -133,7 +133,7 @@ Because who you're becoming… she's worth the stretch.
     coverImage: "/images/blog/blog-4.jpg",
     slug: "the-pressure-to-be-everything",
     content: `
-4. The Pressure to Be Everything, All at Once
+The Pressure to Be Everything, All at Once
 
 There's this unspoken pressure many women carry—to be everything, to everyone, all at once.
 The perfect mom. The loving wife. The prayer warrior. The helper. The planner. The fixer.
@@ -177,7 +177,7 @@ You were never meant to wear that crown.
     coverImage: "/images/blog/blog-5.jpg",
     slug: "youre-not-behind",
     content: `
-5. You're Not Behind—You're Being Prepared
+You're Not Behind—You're Being Prepared
 
 Have you ever looked around and felt like everyone else is further ahead?
 

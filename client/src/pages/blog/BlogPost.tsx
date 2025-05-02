@@ -51,23 +51,29 @@ const BlogPost: React.FC = () => {
     <div className="min-h-screen bg-cream">
       <Header />
       
-      {/* Hero section with blog image */}
-      <div className="relative w-full h-[60vh] overflow-hidden">
+      {/* Full-width hero section with blog image */}
+      <div className="relative w-full h-[70vh] overflow-hidden">
         <img 
           src={post.coverImage} 
           alt={post.title} 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <div className="text-center max-w-4xl px-4">
-            <h1 className="text-4xl md:text-5xl font-light text-white mb-4">{post.title}</h1>
-          </div>
-        </div>
+        {/* No text overlay on the image */}
       </div>
       
       {/* Content section */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-16">
         <div className="max-w-3xl mx-auto">
+          {/* Title displayed underneath the image, styled for emphasis */}
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-light text-charcoal mb-10 text-center font-cursive">{post.title}</h1>
+          
+          {/* Decorative element */}
+          <div className="flex justify-center mb-12">
+            <div className="h-px w-16 bg-tan-dark/30"></div>
+            <div className="mx-4 text-tan-dark opacity-50">✦</div>
+            <div className="h-px w-16 bg-tan-dark/30"></div>
+          </div>
+          
           <div className="prose prose-lg max-w-none">
             {formattedContent}
           </div>
