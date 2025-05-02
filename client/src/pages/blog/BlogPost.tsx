@@ -68,13 +68,6 @@ const BlogPost: React.FC = () => {
       {/* Content section */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto">
-          <Link href="/">
-            <span className="inline-flex items-center text-tan-dark hover:text-tan-light mb-8 transition-colors cursor-pointer">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </span>
-          </Link>
-          
           <div className="prose prose-lg max-w-none">
             {formattedContent}
           </div>
