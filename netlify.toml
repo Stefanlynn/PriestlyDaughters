@@ -46,4 +46,4 @@
     # Use custom email notification template
     template = "email-templates/subscribe-notification.html"
     # Specify success redirect
-    success_url = "/subscribe-thank-you.html"
+    success_url = "/subscribe-thank-you"
