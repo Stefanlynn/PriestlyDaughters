@@ -39,7 +39,7 @@ const BlogCard: React.FC<{
 const BlogSection: React.FC = () => {
 
   return (
-    <section className="py-20 bg-cream">
+    <section className="py-20 bg-cream" style={{ transform: 'translateZ(0)', willChange: 'scroll-position' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl text-charcoal mb-4 font-light">From the Blog</h2>
@@ -50,8 +50,8 @@ const BlogSection: React.FC = () => {
           {/* Subtle indicator that this is scrollable */}
           <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-16 h-full bg-gradient-to-l from-cream to-transparent pointer-events-none z-10"></div>
           
-          <div className="overflow-x-auto pb-4 hide-scrollbar">
-            <div className="flex pl-8" style={{ width: 'max-content' }}>
+          <div className="overflow-x-auto pb-4 hide-scrollbar" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <div className="flex pl-8" style={{ width: 'max-content', transform: 'translateZ(0)' }}>
               {blogPosts.map((post, index) => (
                 <div 
                   key={post.id} 
