@@ -30,18 +30,19 @@ const HeroSection = () => {
     <section className="relative min-h-screen overflow-hidden">
       {/* Video background */}
       <div className="absolute inset-0">
+        {/* Placeholder background while video loads */}
+        <div className="absolute inset-0 bg-cream z-0"></div>
         <video
           ref={videoRef}
-          className="absolute w-full h-full object-cover"
+          className="absolute w-full h-full object-cover z-10"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
+          poster="/images/video-poster.jpg" // Optional: Add a poster image
         >
           <source src="/videos/background.mov" type="video/quicktime" />
-          {/* Fallback to cream background if video fails */}
-          <div className="absolute inset-0 bg-cream"></div>
         </video>
       </div>
       
