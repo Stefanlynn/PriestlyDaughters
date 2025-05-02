@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'wouter';
 import { ArrowLeft, Mail, Instagram, Facebook, Calendar, Youtube, MapPin, Send, Heart } from 'lucide-react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Contact = () => {
   const [reasonForContact, setReasonForContact] = useState('');
@@ -396,6 +397,8 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };
