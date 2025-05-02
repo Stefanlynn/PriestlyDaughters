@@ -52,10 +52,10 @@ const Home = () => {
             
             <div className="mt-12">
               <h3 className="font-cursive text-3xl md:text-4xl text-charcoal mb-8">
-                Let's Connect
+                Join Us
               </h3>
               <button className="px-8 py-3 bg-white text-charcoal rounded-full shadow-md hover:shadow-lg transition-all border border-tan-dark/20">
-                Get Started
+                Let's Connect
               </button>
             </div>
           </div>
