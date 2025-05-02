@@ -116,7 +116,7 @@ const Header = () => {
               </div>
               
               {/* Logo on top center */}
-              <div className="mt-16 mb-12 flex justify-center">
+              <div className="pt-16 flex justify-center">
                 <Link href="/" className="flex items-center" onClick={toggleMenu}>
                   <div className="w-20 h-20">
                     <Logo />
@@ -124,9 +124,9 @@ const Header = () => {
                 </Link>
               </div>
               
-              {/* Centered Navigation Links */}
-              <div className="flex-grow flex flex-col items-center justify-center">
-                <nav className="flex flex-col items-center space-y-8 text-center px-4">
+              {/* Centered Navigation Links - vertically centered between logo and footer */}
+              <div className="flex-1 flex items-center justify-center">
+                <nav className="flex flex-col items-center space-y-10 text-center px-4">
                   <Link 
                     href="/about" 
                     className="text-white hover:text-soft-pink text-2xl transition-colors py-2 font-light tracking-wide"
@@ -160,7 +160,7 @@ const Header = () => {
               </div>
               
               {/* Footer with social links */}
-              <div className="mb-16 text-center">
+              <div className="pb-16 text-center">
                 <div className="flex justify-center space-x-8 text-white/70 text-sm">
                   <a 
                     href="https://www.instagram.com/priestlydaughter?igsh=MnhyY25sbGVxemE3" 
