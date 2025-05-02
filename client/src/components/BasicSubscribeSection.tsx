@@ -10,35 +10,22 @@ const BasicSubscribeSection = () => {
   const [messageType, setMessageType] = useState<'success' | 'error'>('success');
   
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    // Don't prevent default as we want the form to naturally submit to Netlify 
+    // and redirect to the thank-you page
     
     if (!email) {
+      e.preventDefault(); // Only prevent default if validation fails
       setMessage('Please enter an email address.');
       setMessageType('error');
       return;
     }
     
+    // Set submitting state (this will show the loading state until redirect happens)
     setIsSubmitting(true);
     
-    try {
-      // Using Netlify's form handling
-      const form = e.target as HTMLFormElement;
-      const formData = new FormData(form);
-      
-      // Netlify will automatically process this submission since the form has data-netlify="true"
-      // and the form-name hidden input
-      setMessage('Thank you for subscribing!');
-      setMessageType('success');
-      setEmail('');
-      form.reset();
-      
-    } catch (error) {
-      console.error('Subscription error:', error);
-      setMessage('Something went wrong. Please try again.');
-      setMessageType('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Let the form naturally submit to Netlify and redirect
+    // No need to handle form submission manually as the action="/thank-you.html"
+    // attribute will handle the redirect after successful submission
   };
   
   return (
@@ -90,10 +77,15 @@ const BasicSubscribeSection = () => {
                   className="space-y-6"
                   name="subscribe" 
                   method="POST" 
+                  action="/thank-you.html"
                   data-netlify="true"
+                  data-netlify-honeypot="bot-field"
                 >
                   {/* Hidden input for Netlify form handling */}
                   <input type="hidden" name="form-name" value="subscribe" />
+                  <p className="hidden">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                  </p>
                   
                   <div className="relative">
                     <div className="flex overflow-hidden border-b-2 border-tan-dark/30 hover:border-tan-dark/50 transition-colors focus-within:border-tan-dark">

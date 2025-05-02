@@ -37,33 +37,14 @@ const SubscribeSection = () => {
 
   // Handle form submission
   const onSubmit = async (data: SubscribeFormType) => {
+    // Just validate the form data and let Netlify handle the actual submission and redirect
     setIsSubmitting(true);
     
-    try {
-      // This would connect to your email service provider
-      // For now we'll just simulate a successful subscription
-      console.log('Subscription data:', data);
-      
-      // Show success message
-      toast({
-        title: "Successfully subscribed!",
-        description: "Thank you for joining the Priestly Daughters community.",
-        duration: 5000,
-      });
-      
-      // Reset the form
-      form.reset();
-    } catch (error) {
-      console.error('Subscription error:', error);
-      toast({
-        title: "Subscription failed",
-        description: "Something went wrong. Please try again later.",
-        variant: "destructive",
-        duration: 5000,
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // No need to do anything else as form will naturally submit to Netlify
+    // with the action="/thank-you.html" handling the redirect
+    
+    // We're just using react-hook-form for validation before the form submits
+    console.log('Subscription data validated:', data);
   };
 
   return (
@@ -81,7 +62,21 @@ const SubscribeSection = () => {
           
           <div className="max-w-md mx-auto">
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              <form 
+                onSubmit={form.handleSubmit(onSubmit)} 
+                className="space-y-4"
+                name="subscribe-secondary" 
+                method="POST" 
+                action="/thank-you.html"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+              >
+                {/* Hidden input for Netlify form handling */}
+                <input type="hidden" name="form-name" value="subscribe-secondary" />
+                <p className="hidden">
+                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+                
                 <div className="flex flex-col sm:flex-row gap-3">
                   <FormField
                     control={form.control}
