@@ -41,7 +41,7 @@ const SubscribeSection = () => {
     setIsSubmitting(true);
     
     // No need to do anything else as form will naturally submit to Netlify
-    // with the action="/thank-you.html" handling the redirect
+    // with the action="/subscribe-thank-you.html" handling the redirect
     
     // We're just using react-hook-form for validation before the form submits
     console.log('Subscription data validated:', data);
