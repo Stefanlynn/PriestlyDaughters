@@ -196,6 +196,6 @@
 
 /* Video fade transition for smoother looping */
 .transition-opacity {
-  transition: opacity 300ms ease-in-out;
+  transition: opacity 150ms ease;
   will-change: opacity;
 }
