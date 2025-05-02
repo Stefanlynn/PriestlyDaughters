@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 const HeroSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -35,10 +36,13 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="relative min-h-screen flex items-center justify-center">
-        <div className="text-center mt-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-cursive text-white tracking-wider handwriting">
+        <div className="text-center mt-16 flex flex-col items-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-cursive text-white tracking-wider handwriting mb-8">
             Priestly Daughters
           </h1>
+          <div className="animate-bounce-slow opacity-0 animate-fade-in" style={{animationDelay: '3.5s', animationFillMode: 'forwards'}}>
+            <ChevronDown className="h-10 w-10 text-white" strokeWidth={1} />
+          </div>
         </div>
       </div>
     </section>
