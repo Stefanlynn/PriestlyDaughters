@@ -3,11 +3,8 @@ import Logo from './Logo';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen">
-      {/* Background image */}
-      <div 
-        className="absolute inset-0 bg-center bg-cover bg-no-repeat"
-        style={{ backgroundImage: `url(/images/powellfam-16.JPG)` }}
-      ></div>
+      {/* Cream background */}
+      <div className="absolute inset-0 bg-cream"></div>
       
       {/* Black overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
