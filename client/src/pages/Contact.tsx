@@ -36,6 +36,7 @@ const Contact = () => {
             <div className="bg-cream/50 p-8 md:p-12 rounded-xl shadow-sm mb-20">
               <form name="contact" method="POST" data-netlify="true" className="space-y-6">
                 <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="recipient" value="Priestlydaughter12@gmail.com" />
                 
                 <div>
                   <label htmlFor="name" className="block text-charcoal font-medium mb-2">Name</label>
@@ -107,7 +108,7 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold mb-2">Email Us</h3>
                 <p className="text-sm text-charcoal/70 mb-4">For general inquiries</p>
                 <span className="text-tan-dark">
-                  contact@priestlydaughters.com
+                  Priestlydaughter12@gmail.com
                 </span>
               </div>
               
@@ -119,7 +120,7 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold mb-2">Book Elizabeth</h3>
                 <p className="text-sm text-charcoal/70 mb-4">For speaking engagements</p>
                 <span className="text-tan-dark">
-                  speaking@priestlydaughters.com
+                  Priestlydaughter12@gmail.com
                 </span>
               </div>
               
