@@ -13,6 +13,19 @@ const HeroSection = () => {
     }
   }, []);
   
+  // Function to scroll to the first section
+  const scrollToFirstSection = () => {
+    // Get the first section that follows the hero
+    const firstSection = document.querySelector('section.bg-cream');
+    
+    if (firstSection) {
+      firstSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+  
   return (
     <section className="relative min-h-screen overflow-hidden">
       {/* Video background */}
@@ -41,9 +54,13 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-cursive text-white tracking-wider handwriting mb-8">
             Priestly Daughters
           </h1>
-          <div className="animate-bounce-slow" style={{opacity: 1}}>
-            <ChevronDown className="h-12 w-12 text-white" strokeWidth={2} />
-          </div>
+          <button 
+            onClick={scrollToFirstSection}
+            className="animate-bounce-slow bg-transparent border-none cursor-pointer"
+            aria-label="Scroll to content"
+          >
+            <ChevronDown className="h-12 w-12 text-white hover:text-white/80 transition-colors" strokeWidth={2} />
+          </button>
         </div>
       </div>
     </section>
