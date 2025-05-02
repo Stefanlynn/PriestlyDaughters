@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
+import BlogSection from '../components/BlogSection';
 
 const Home = () => {
   return (
@@ -111,6 +112,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
+      {/* Blog Section */}
+      <BlogSection />
     </>
   );
 };
