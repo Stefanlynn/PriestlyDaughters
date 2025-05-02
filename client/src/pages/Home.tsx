@@ -82,6 +82,12 @@ const Home = () => {
                   And I'm here to help you walk in the purpose God already placed inside you.
                 </p>
               </div>
+              
+              <div className="mt-8">
+                <button className="px-8 py-3 bg-white text-charcoal rounded-full shadow-md hover:shadow-lg transition-all border border-tan-dark/20">
+                  Meet Elizabeth
+                </button>
+              </div>
             </div>
             
             {/* Right side - Image */}
