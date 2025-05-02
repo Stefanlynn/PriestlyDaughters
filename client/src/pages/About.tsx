@@ -34,9 +34,16 @@ const About: React.FC = () => {
       {/* Hero section with pink background and rotating images - extends to top of page */}
       <section className="bg-soft-pink pt-[90px] pb-16 md:pt-[90px] md:pb-28">
         <div className="container mx-auto px-4">
+          {/* Decorative element at top */}
+          <div className="flex justify-center mb-6 pt-8 opacity-30">
+            <div className="h-px w-16 bg-tan-dark/30"></div>
+            <div className="mx-3 text-tan-dark/40 text-xs">✦</div>
+            <div className="h-px w-16 bg-tan-dark/30"></div>
+          </div>
+          
           <div className="flex flex-col md:flex-row items-center gap-12">
-            {/* Image gallery with rotation effect */}
-            <div className="w-full md:w-1/2 mb-12 md:mb-0 relative overflow-hidden" style={{ height: '500px' }}>
+            {/* Image gallery with rotation effect - moved further down */}
+            <div className="w-full md:w-1/2 mb-12 md:mb-0 relative overflow-hidden mt-12 md:mt-16" style={{ height: '500px' }}>
               <div className="rounded-xl overflow-hidden shadow-xl h-full relative">
                 {/* Main image with animation */}
                 <AnimatePresence mode="wait">
@@ -65,8 +72,8 @@ const About: React.FC = () => {
               <div className="absolute -top-4 -left-4 w-1/4 h-1/4 border-2 border-white/20 rounded-lg"></div>
             </div>
             
-            {/* Bio text - first part */}
-            <div className="w-full md:w-1/2 md:pl-8">
+            {/* Bio text - first part - adjusted to align with image */}
+            <div className="w-full md:w-1/2 md:pl-8 mt-8 md:mt-16">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-cursive text-charcoal mb-10">Meet Elizabeth</h1>
               
               <div className="prose prose-lg">
