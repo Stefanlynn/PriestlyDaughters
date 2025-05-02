@@ -23,9 +23,6 @@ const Header = () => {
           
           {/* Navigation on the right - desktop */}
           <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="text-white hover:text-gray-300 transition-colors">
-              Home
-            </Link>
             <Link href="/about" className="text-white hover:text-gray-300 transition-colors">
               About
             </Link>
@@ -78,9 +75,6 @@ const Header = () => {
           >
             <div className="container mx-auto px-4 py-4">
               <nav className="flex flex-col space-y-4">
-                <Link href="/" className="text-white hover:text-gray-300 transition-colors py-2">
-                  Home
-                </Link>
                 <Link href="/about" className="text-white hover:text-gray-300 transition-colors py-2">
                   About
                 </Link>
