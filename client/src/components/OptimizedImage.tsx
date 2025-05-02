@@ -45,7 +45,15 @@ const OptimizedImage = ({
   };
 
   return (
-    <div className="relative overflow-hidden" style={{ width, height }}>
+    <div 
+      className="relative overflow-hidden" 
+      style={{ 
+        width, 
+        height,
+        transform: 'translateZ(0)',
+        backfaceVisibility: 'hidden'
+      }}
+    >
       {/* Loading placeholder */}
       {!isLoaded && (
         <div 
@@ -67,8 +75,12 @@ const OptimizedImage = ({
         width={width}
         height={height}
         loading={priority ? "eager" : "lazy"}
-        // fetchPriority is not supported in all React versions, removed to prevent errors
+        decoding="async"
         onLoad={handleImageLoad}
+        style={{ 
+          willChange: isLoaded ? 'auto' : 'opacity',
+          transform: 'translateZ(0)'
+        }}
         {...props}
       />
     </div>
