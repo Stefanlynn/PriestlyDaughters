@@ -73,7 +73,7 @@ const Community = () => {
                   Check our social media for upcoming dates and locations.
                 </p>
                 <a 
-                  href="https://www.facebook.com/share/1DFNGXxVfY/?mibextid=wwXIfr" 
+                  href="https://www.facebook.com/share/15Hf4dfwKT/?mibextid=wwXIfr" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center bg-tan-dark text-white px-4 py-2 rounded-md hover:bg-charcoal transition-colors cursor-pointer text-sm font-medium"

@@ -145,7 +145,7 @@ const Home = () => {
             
             <div className="mt-10">
               <a 
-                href="https://www.facebook.com/groups/priestlydaughterscommunity" 
+                href="https://www.facebook.com/share/15Hf4dfwKT/?mibextid=wwXIfr" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-3 bg-tan-dark text-white font-medium rounded-full shadow-md hover:shadow-lg transition-all"

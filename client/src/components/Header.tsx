@@ -156,7 +156,7 @@ const Header = () => {
                     Instagram
                   </a>
                   <a 
-                    href="https://www.facebook.com/share/1DFNGXxVfY/?mibextid=wwXIfr" 
+                    href="https://www.facebook.com/share/15Hf4dfwKT/?mibextid=wwXIfr" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="hover:text-soft-pink transition-colors"
