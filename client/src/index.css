@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
   :root {
     --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;
@@ -196,15 +192,6 @@
   height: 100vh !important;
   background-color: #000000 !important;
   z-index: 9999 !important;
-}
-
-/* Smooth scrolling utilities */
-.scroll-smooth {
-  scroll-behavior: smooth;
-}
-
-.scroll-mt-header {
-  scroll-margin-top: 5rem; /* Adjust based on header height */
 }
 
 

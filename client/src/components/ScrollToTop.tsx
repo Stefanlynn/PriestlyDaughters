@@ -6,12 +6,8 @@ const ScrollToTop: React.FC = () => {
   const [location] = useLocation();
   
   useEffect(() => {
-    // When location changes, scroll to top of page with smooth behavior
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+    // When location changes, scroll to top of page
+    window.scrollTo(0, 0);
   }, [location]);
 
   return null; // This component doesn't render anything
