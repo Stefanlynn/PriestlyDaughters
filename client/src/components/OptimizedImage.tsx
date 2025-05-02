@@ -67,7 +67,7 @@ const OptimizedImage = ({
         width={width}
         height={height}
         loading={priority ? "eager" : "lazy"}
-        fetchPriority={priority ? "high" : "auto"}
+        // fetchPriority is not supported in all React versions, removed to prevent errors
         onLoad={handleImageLoad}
         {...props}
       />
