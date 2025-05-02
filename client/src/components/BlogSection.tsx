@@ -47,20 +47,20 @@ const BlogCard: React.FC<{
   slug: string;
 }> = ({ title, description, coverImage, slug }) => {
   return (
-    <div className="blog-card bg-white rounded-lg overflow-hidden shadow-md mx-1 flex flex-col h-full">
-      <div className="relative h-48 overflow-hidden">
+    <div className="blog-card bg-white rounded-lg overflow-hidden shadow-md mx-2 flex flex-col h-full">
+      <div className="relative h-64 overflow-hidden">
         <div className="absolute inset-0 bg-tan-light flex items-center justify-center text-charcoal">
           {/* Placeholder for actual images */}
           <div className="w-full h-full bg-gradient-to-br from-tan-light to-cream flex items-center justify-center">
-            <span className="font-cursive text-lg text-center px-4 opacity-80">Priestly Daughters</span>
+            <span className="font-cursive text-2xl text-center px-6 opacity-80">Priestly Daughters</span>
           </div>
         </div>
       </div>
-      <div className="p-4 flex-grow flex flex-col">
-        <h3 className="text-sm font-medium mb-2 text-charcoal line-clamp-2 min-h-[2.5rem]">{title}</h3>
-        <p className="text-charcoal/80 mb-3 text-xs line-clamp-3 flex-grow">{description}</p>
-        <div className="mt-auto">
-          <a href={`/blog/${slug}`} className="text-tan-dark hover:text-tan-light font-medium text-xs transition-colors">
+      <div className="p-6 flex-grow flex flex-col">
+        <h3 className="text-lg font-medium mb-3 text-charcoal line-clamp-2 min-h-[3.5rem]">{title}</h3>
+        <p className="text-charcoal/80 mb-4 text-sm line-clamp-3 flex-grow">{description}</p>
+        <div className="mt-auto pt-3 border-t border-tan-light/30">
+          <a href={`/blog/${slug}`} className="text-tan-dark hover:text-tan-light font-medium text-sm transition-colors">
             Read More &rarr;
           </a>
         </div>
@@ -70,16 +70,6 @@ const BlogCard: React.FC<{
 };
 
 const BlogSection: React.FC = () => {
-  const [startIndex, setStartIndex] = React.useState(0);
-  const visiblePosts = 5; // Number of cards shown at once - showing all 5 blog posts
-
-  const showNext = () => {
-    setStartIndex(prev => Math.min(prev + 1, blogPosts.length - visiblePosts));
-  };
-
-  const showPrev = () => {
-    setStartIndex(prev => Math.max(prev - 1, 0));
-  };
 
   return (
     <section className="py-20 bg-cream">
@@ -89,25 +79,17 @@ const BlogSection: React.FC = () => {
           <p className="text-lg text-charcoal/80 max-w-3xl mx-auto font-light">Inspiration, encouragement, and wisdom for your journey of faith and purpose.</p>
         </div>
         
-        <div className="relative">
-          {/* Carousel controls */}
-          <button 
-            onClick={showPrev} 
-            disabled={startIndex === 0}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-10 bg-white h-10 w-10 rounded-full shadow-md flex items-center justify-center 
-              ${startIndex === 0 ? 'opacity-40 cursor-not-allowed' : 'opacity-100 cursor-pointer'}`}
-            aria-label="Previous blogs"
-          >
-            <ChevronLeft className="h-6 w-6 text-charcoal" />
-          </button>
+        <div className="relative max-w-[90%] mx-auto">
+          {/* Subtle indicator that this is scrollable */}
+          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-16 h-full bg-gradient-to-l from-cream to-transparent pointer-events-none z-10"></div>
           
-          <div className="overflow-hidden">
-            <div 
-              className="flex transition-all duration-300 ease-in-out"
-              style={{ transform: `translateX(-${startIndex * (100 / visiblePosts)}%)` }}
-            >
-              {blogPosts.map(post => (
-                <div key={post.id} className="w-full min-w-[calc(100%/5)] px-2 md:min-w-[calc(100%/5)]">
+          <div className="overflow-x-auto pb-4 hide-scrollbar">
+            <div className="flex pl-8" style={{ width: 'max-content' }}>
+              {blogPosts.map((post, index) => (
+                <div 
+                  key={post.id} 
+                  className={`w-[330px] md:w-[380px] px-3 flex-shrink-0 ${index === 0 ? 'ml-0' : ''}`}
+                >
                   <BlogCard
                     title={post.title}
                     description={post.description}
@@ -118,16 +100,6 @@ const BlogSection: React.FC = () => {
               ))}
             </div>
           </div>
-          
-          <button 
-            onClick={showNext} 
-            disabled={startIndex >= blogPosts.length - visiblePosts}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-10 bg-white h-10 w-10 rounded-full shadow-md flex items-center justify-center 
-              ${startIndex >= blogPosts.length - visiblePosts ? 'opacity-40 cursor-not-allowed' : 'opacity-100 cursor-pointer'}`}
-            aria-label="Next blogs"
-          >
-            <ChevronRight className="h-6 w-6 text-charcoal" />
-          </button>
         </div>
         
         <div className="mt-12 text-center">
