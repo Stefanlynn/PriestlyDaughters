@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import BlogSection from '../components/BlogSection';
-import { Link } from 'wouter';
+import { Link } from "wouter";
 
 const Home = () => {
   return (
