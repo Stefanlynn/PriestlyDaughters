@@ -116,7 +116,7 @@ const Community = () => {
                   Celebrate the women walking this journey. Read real stories of transformation, purpose, 
                   and growth from our community members.
                 </p>
-                <Link href="#">
+                <Link href="/coming-soon">
                   <span className="inline-flex items-center text-tan-dark hover:text-soft-pink transition-colors cursor-pointer text-sm font-medium">
                     Read Community Stories
                     <ArrowRight className="w-4 h-4 ml-2" />
