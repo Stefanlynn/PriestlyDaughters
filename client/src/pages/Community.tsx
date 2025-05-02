@@ -76,7 +76,7 @@ const Community = () => {
                   href="https://www.facebook.com/share/1DFNGXxVfY/?mibextid=wwXIfr" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center text-tan-dark hover:text-soft-pink transition-colors cursor-pointer text-sm font-medium"
+                  className="inline-flex items-center bg-tan-dark text-white px-4 py-2 rounded-md hover:bg-charcoal transition-colors cursor-pointer text-sm font-medium"
                 >
                   Join Now
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -148,7 +148,7 @@ const Community = () => {
                 href="https://www.facebook.com/share/1DFNGXxVfY/?mibextid=wwXIfr" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-soft-pink hover:bg-soft-pink/90 text-white py-3 px-8 rounded-lg transition-colors flex items-center justify-center w-full md:w-auto"
+                className="bg-tan-dark hover:bg-charcoal text-white py-3 px-8 rounded-lg transition-colors flex items-center justify-center w-full md:w-auto font-medium shadow-md"
               >
                 <Facebook className="w-5 h-5 mr-2" />
                 Join Now
