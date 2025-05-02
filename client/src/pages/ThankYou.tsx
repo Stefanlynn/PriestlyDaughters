@@ -24,10 +24,8 @@ const ThankYou = () => {
               Your message has been received. We appreciate you reaching out and will respond to you as soon as possible.
             </p>
             
-            <Link href="/">
-              <a className="inline-block px-8 py-3 rounded-lg bg-tan-dark hover:bg-tan-dark/90 text-white font-medium transition-colors duration-200 shadow-md">
-                Return to Homepage
-              </a>
+            <Link href="/" className="inline-block px-8 py-3 rounded-lg bg-tan-dark hover:bg-tan-dark/90 text-white font-medium transition-colors duration-200 shadow-md">
+              Return to Homepage
             </Link>
           </div>
         </div>
