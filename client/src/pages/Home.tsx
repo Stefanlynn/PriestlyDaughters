@@ -32,9 +32,6 @@ const Home = () => {
               <p className="text-2xl md:text-3xl text-charcoal mb-10 font-cursive">
                 you're not broken, and you're not alone.
               </p>
-              <p className="text-xl md:text-2xl text-charcoal mb-12 font-light">
-                This space was created for women like you.
-              </p>
             </div>
           </div>
         </div>
@@ -44,13 +41,16 @@ const Home = () => {
       <section className="py-16 bg-soft-pink">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="mb-12">
+            <div className="mb-10">
+              <p className="text-xl md:text-2xl text-charcoal mb-8 font-light">
+                This space was created for women like you.
+              </p>
               <p className="text-xl md:text-2xl text-charcoal font-light italic">
                 Women called. Chosen. Ready to grow deeper, rise higher, and walk fully in who God created them to be.
               </p>
             </div>
             
-            <div className="mt-10">
+            <div className="mt-12">
               <h3 className="font-cursive text-3xl md:text-4xl text-charcoal mb-8">
                 Let's Connect
               </h3>
