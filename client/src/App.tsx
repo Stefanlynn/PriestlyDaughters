@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Community from "./pages/Community";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
+import ComingSoon from "./pages/ComingSoon";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/resources" component={Resources} />
       <Route path="/contact" component={Contact} />
+      <Route path="/coming-soon" component={ComingSoon} />
       <Route component={NotFound} />
     </Switch>
   );
