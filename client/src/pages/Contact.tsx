@@ -1,31 +1,40 @@
 import React from 'react';
 import { Link } from 'wouter';
-import { ArrowLeft, Mail, Instagram, Facebook, Calendar, Youtube, MapPin, Send } from 'lucide-react';
+import { ArrowLeft, Mail, Instagram, Facebook, Calendar, Youtube, MapPin, Send, Heart } from 'lucide-react';
 import Header from '../components/Header';
-import backgroundImage from '@assets/silhouette-of-reaching-helping-hand-hope-and-support-each-other-over-sunset-people-han-SBI-349512636.jpg';
 
 const Contact = () => {
   return (
     <div className="min-h-screen bg-cream">
       <Header />
       
-      {/* Hero section with background image */}
-      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" 
-          style={{ 
-            backgroundImage: `url(${backgroundImage})` 
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-soft-pink/40 to-soft-pink/60"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl font-cursive text-charcoal mb-8">Let's Connect</h1>
-            <p className="text-lg text-charcoal/90 leading-relaxed max-w-2xl mx-auto">
-              We're here to answer your questions, listen to your prayer requests, 
-              and help you join our community of faithful women.
-            </p>
+      {/* Hero section with elegant design */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-soft-pink/30 to-soft-pink/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="relative pb-14">
+              {/* Decorative elements */}
+              <div className="absolute w-16 h-16 top-0 left-0 border-t-2 border-l-2 border-soft-pink opacity-40"></div>
+              <div className="absolute w-16 h-16 top-0 right-0 border-t-2 border-r-2 border-soft-pink opacity-40"></div>
+              <div className="absolute w-16 h-16 bottom-0 left-0 border-b-2 border-l-2 border-soft-pink opacity-40"></div>
+              <div className="absolute w-16 h-16 bottom-0 right-0 border-b-2 border-r-2 border-soft-pink opacity-40"></div>
+              
+              {/* Content */}
+              <div className="text-center px-6 md:px-12 py-10">
+                <h1 className="text-3xl md:text-5xl font-cursive text-charcoal mb-6">Let's Connect</h1>
+                
+                <div className="flex justify-center mb-8">
+                  <Heart className="text-soft-pink w-6 h-6 mx-2 opacity-70" />
+                  <div className="w-16 h-0.5 bg-soft-pink/40 self-center"></div>
+                  <Heart className="text-soft-pink w-6 h-6 mx-2 opacity-70" />
+                </div>
+                
+                <p className="text-lg text-charcoal/80 leading-relaxed max-w-2xl mx-auto">
+                  We're here to answer your questions, listen to your prayer requests, 
+                  and help you join our community of faithful women.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
