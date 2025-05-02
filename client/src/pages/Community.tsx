@@ -66,7 +66,7 @@ const Community = () => {
                   These moments are relaxed, real, and focused on growing together in faith and womanhood.
                 </p>
                 <p className="text-charcoal/80 mb-6">
-                  Check our Facebook page for upcoming dates and locations.
+                  Check our social media for upcoming dates and locations.
                 </p>
                 <a 
                   href="https://www.facebook.com/share/1DFNGXxVfY/?mibextid=wwXIfr" 
@@ -74,7 +74,7 @@ const Community = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-tan-dark hover:text-soft-pink transition-colors cursor-pointer text-sm font-medium"
                 >
-                  Visit Our Facebook Page
+                  Join Now
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </a>
               </div>
@@ -135,7 +135,7 @@ const Community = () => {
             <h2 className="text-2xl md:text-4xl font-cursive text-charcoal mb-6">Join the Circle</h2>
             <p className="text-lg text-charcoal/80 mb-10 max-w-2xl mx-auto">
               Want updates about meetups, prayer calls, or upcoming gatherings?
-              Make sure you're following us on Facebook, where we keep the conversation going and the community growing.
+              Join our online community where we keep the conversation going and the community growing.
             </p>
             
             {/* CTA Button */}
@@ -147,7 +147,7 @@ const Community = () => {
                 className="bg-soft-pink hover:bg-soft-pink/90 text-white py-3 px-8 rounded-lg transition-colors flex items-center justify-center w-full md:w-auto"
               >
                 <Facebook className="w-5 h-5 mr-2" />
-                Follow Us on Facebook
+                Join Now
               </a>
             </div>
             
