@@ -40,8 +40,8 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-cursive text-white tracking-wider handwriting mb-8">
             Priestly Daughters
           </h1>
-          <div className="animate-bounce-slow opacity-0 animate-fade-in" style={{animationDelay: '3.5s', animationFillMode: 'forwards'}}>
-            <ChevronDown className="h-10 w-10 text-white" strokeWidth={1} />
+          <div className="animate-bounce-slow" style={{opacity: 1}}>
+            <ChevronDown className="h-12 w-12 text-white" strokeWidth={2} />
           </div>
         </div>
       </div>
