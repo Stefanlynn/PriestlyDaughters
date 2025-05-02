@@ -27,23 +27,59 @@ const BlogPost: React.FC = () => {
     );
   }
 
-  // Format content by replacing line breaks with <br> tags and adding paragraph breaks
+  // Format content with enhanced styling
   const formattedContent = post.content
     .split('\n\n')
     .map((paragraph, index) => {
       // Skip empty paragraphs
       if (!paragraph.trim()) return null;
       
-      return (
-        <p key={index} className="mb-6 text-charcoal/90 leading-relaxed">
-          {paragraph.split('\n').map((line, i) => (
-            <React.Fragment key={i}>
-              {line}
-              {i < paragraph.split('\n').length - 1 && <br />}
-            </React.Fragment>
-          ))}
-        </p>
-      );
+      // Skip the title paragraph (first non-empty paragraph) as we're displaying it separately
+      if (index === 0) return null;
+      
+      // Check if paragraph is a short one (could be a callout or quote)
+      const isShortParagraph = paragraph.trim().length < 100 && paragraph.trim().length > 10;
+      
+      // Check if paragraph ends with a question mark (potential question)
+      const isQuestion = paragraph.trim().endsWith('?');
+      
+      if (isShortParagraph && !isQuestion) {
+        // Style short paragraphs as callouts/emphasis text
+        return (
+          <p key={index} className="my-10 text-xl md:text-2xl text-tan-dark font-cursive text-center px-4">
+            {paragraph.split('\n').map((line, i) => (
+              <React.Fragment key={i}>
+                {line}
+                {i < paragraph.split('\n').length - 1 && <br />}
+              </React.Fragment>
+            ))}
+          </p>
+        );
+      } else if (isQuestion) {
+        // Style questions with emphasis
+        return (
+          <p key={index} className="mb-6 text-charcoal/90 leading-relaxed font-medium italic">
+            {paragraph.split('\n').map((line, i) => (
+              <React.Fragment key={i}>
+                {line}
+                {i < paragraph.split('\n').length - 1 && <br />}
+              </React.Fragment>
+            ))}
+          </p>
+        );
+      } else {
+        // Regular paragraphs
+        return (
+          <p key={index} className="mb-6 text-charcoal/90 leading-relaxed">
+            {paragraph.split('\n').map((line, i) => (
+              <React.Fragment key={i}>
+                {line}
+                {i < paragraph.split('\n').length - 1 && <br />}
+              </React.Fragment>
+            ))}
+          </p>
+        );
+      }
     })
     .filter(Boolean);
 
@@ -74,25 +110,38 @@ const BlogPost: React.FC = () => {
             <div className="h-px w-16 bg-tan-dark/30"></div>
           </div>
           
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none prose-p:text-charcoal/90 prose-headings:text-charcoal prose-headings:font-light">
+            {/* Initial quotation mark for visual appeal */}
+            <div className="text-tan-dark/20 text-8xl font-cursive leading-none mb-6">"</div>
+            
             {formattedContent}
+            
+            {/* Closing quotation mark for visual appeal */}
+            <div className="text-tan-dark/20 text-8xl font-cursive leading-none text-right mt-6">"</div>
           </div>
           
-          <div className="mt-12 pt-8 border-t border-tan-light/20 flex flex-col items-center">
-            <div className="flex flex-wrap gap-6 w-full mb-8">
+          <div className="mt-16 pt-10 flex flex-col items-center">
+            {/* Decorative element */}
+            <div className="flex justify-center mb-10">
+              <div className="h-px w-20 bg-tan-dark/20"></div>
+              <div className="mx-4 text-tan-dark/40 text-sm">✧</div>
+              <div className="h-px w-20 bg-tan-dark/20"></div>
+            </div>
+            
+            <Link href="/blog">
+              <div className="inline-block mb-12 px-10 py-4 bg-white text-charcoal rounded-full shadow-sm hover:shadow-md transition-all border border-tan-dark/30 cursor-pointer font-light tracking-wide">
+                View All Posts
+              </div>
+            </Link>
+
+            <div className="flex flex-wrap gap-6 w-full mt-4 justify-center">
               <Link href="/">
-                <span className="inline-flex items-center text-tan-dark hover:text-tan-light transition-colors cursor-pointer">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
+                <span className="inline-flex items-center text-tan-dark/70 hover:text-tan-dark transition-colors cursor-pointer text-sm">
+                  <ArrowLeft className="w-3 h-3 mr-2" />
                   Back to Home
                 </span>
               </Link>
             </div>
-            
-            <Link href="/blog">
-              <div className="inline-block px-8 py-3 bg-white text-charcoal rounded-full shadow-md hover:shadow-lg transition-all border border-tan-dark/20 cursor-pointer">
-                View All Posts
-              </div>
-            </Link>
           </div>
         </div>
       </div>
