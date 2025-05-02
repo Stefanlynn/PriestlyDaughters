@@ -81,7 +81,7 @@ const About: React.FC = () => {
       </section>
       
       {/* Second section with the rest of the bio */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="pt-20 pb-10 md:pt-24 md:pb-10 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             {/* Decorative element at top */}
@@ -114,7 +114,7 @@ const About: React.FC = () => {
       </section>
       
       {/* Family photo section */}
-      <section className="py-12 bg-white">
+      <section className="pt-0 pb-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="relative rounded-xl overflow-hidden shadow-xl">
