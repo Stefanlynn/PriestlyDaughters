@@ -146,7 +146,7 @@ const Home = () => {
                 href="https://www.facebook.com/groups/priestlydaughterscommunity" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 bg-soft-pink text-white rounded-full shadow-md hover:shadow-lg transition-all"
+                className="inline-block px-8 py-3 bg-tan-dark text-white font-medium rounded-full shadow-md hover:shadow-lg transition-all"
               >
                 Join the Sisterhood
               </a>
