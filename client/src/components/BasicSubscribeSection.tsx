@@ -93,11 +93,21 @@ const BasicSubscribeSection = () => {
                   empowering teachings, and first access to all things Priestly Daughters.
                 </p>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form 
+                  onSubmit={handleSubmit} 
+                  className="space-y-6"
+                  name="subscribe" 
+                  method="POST" 
+                  data-netlify="true"
+                >
+                  {/* Hidden input for Netlify form handling */}
+                  <input type="hidden" name="form-name" value="subscribe" />
+                  
                   <div className="relative">
                     <div className="flex overflow-hidden border-b-2 border-tan-dark/30 hover:border-tan-dark/50 transition-colors focus-within:border-tan-dark">
                       <input
                         type="email"
+                        name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Your email address"
