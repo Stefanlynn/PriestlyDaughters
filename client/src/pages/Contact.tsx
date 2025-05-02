@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'wouter';
-import { ArrowLeft, Mail, Instagram, Facebook, Calendar } from 'lucide-react';
+import { ArrowLeft, Mail, Instagram, Facebook, Calendar, Youtube } from 'lucide-react';
 import Header from '../components/Header';
 
 const Contact = () => {
@@ -99,7 +99,7 @@ const Contact = () => {
             {/* Other contact options */}
             <h3 className="text-xl md:text-2xl font-cursive text-tan-dark text-center mb-10">Other Ways to Connect</h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               {/* Email */}
               <div className="bg-soft-pink/10 p-6 rounded-lg text-center">
                 <div className="w-12 h-12 bg-soft-pink/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -107,9 +107,12 @@ const Contact = () => {
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Email Us</h3>
                 <p className="text-sm text-charcoal/70 mb-4">For general inquiries</p>
-                <span className="text-tan-dark">
+                <a 
+                  href="mailto:Priestlydaughter12@gmail.com" 
+                  className="text-tan-dark hover:text-tan-dark/70 transition-colors"
+                >
                   Priestlydaughter12@gmail.com
-                </span>
+                </a>
               </div>
               
               {/* Book for Speaking */}
@@ -119,21 +122,58 @@ const Contact = () => {
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Book Elizabeth</h3>
                 <p className="text-sm text-charcoal/70 mb-4">For speaking engagements</p>
-                <span className="text-tan-dark">
+                <a 
+                  href="mailto:Priestlydaughter12@gmail.com?subject=Speaking%20Engagement%20Request" 
+                  className="text-tan-dark hover:text-tan-dark/70 transition-colors"
+                >
                   Priestlydaughter12@gmail.com
-                </span>
+                </a>
               </div>
+            </div>
+            
+            {/* Social Media Section */}
+            <div className="bg-soft-pink/10 p-8 rounded-xl mb-16">
+              <h3 className="text-xl font-semibold text-center mb-6">Connect on Social Media</h3>
               
-              {/* Social Media */}
-              <div className="bg-soft-pink/10 p-6 rounded-lg text-center">
-                <div className="w-12 h-12 bg-soft-pink/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Instagram className="w-6 h-6 text-tan-dark" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Social Media</h3>
-                <p className="text-sm text-charcoal/70 mb-4">Connect with us online</p>
-                <span className="text-tan-dark">
-                  @priestlydaughters
-                </span>
+              <div className="flex flex-wrap justify-center gap-8">
+                {/* Instagram */}
+                <a 
+                  href="https://www.instagram.com/priestlydaughter?igsh=MnhyY25sbGVxemE3" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center gap-2 group"
+                >
+                  <div className="w-12 h-12 bg-white/60 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
+                    <Instagram className="w-6 h-6 text-tan-dark" />
+                  </div>
+                  <span className="text-charcoal/80 text-sm">Instagram</span>
+                </a>
+                
+                {/* Facebook */}
+                <a 
+                  href="https://www.facebook.com/share/1DFNGXxVfY/?mibextid=wwXIfr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center gap-2 group"
+                >
+                  <div className="w-12 h-12 bg-white/60 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
+                    <Facebook className="w-6 h-6 text-tan-dark" />
+                  </div>
+                  <span className="text-charcoal/80 text-sm">Facebook</span>
+                </a>
+                
+                {/* YouTube */}
+                <a 
+                  href="https://www.youtube.com/channel/UC53UiFAW64n4NvMClDt1-xQ" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center gap-2 group"
+                >
+                  <div className="w-12 h-12 bg-white/60 rounded-full flex items-center justify-center group-hover:bg-white transition-colors">
+                    <Youtube className="w-6 h-6 text-tan-dark" />
+                  </div>
+                  <span className="text-charcoal/80 text-sm">YouTube</span>
+                </a>
               </div>
             </div>
             
