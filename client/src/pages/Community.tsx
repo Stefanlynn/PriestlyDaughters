@@ -152,21 +152,21 @@ const Community = () => {
             {/* CTA Buttons Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
               <a 
-                href="#" 
+                href="/contact" 
                 className="bg-soft-pink hover:bg-soft-pink/90 text-white py-3 px-5 rounded-lg transition-colors flex items-center justify-center"
               >
                 <UserPlus className="w-5 h-5 mr-2" />
                 Join the Circle
               </a>
               <a 
-                href="#" 
+                href="/contact" 
                 className="bg-white hover:bg-cream transition-colors text-charcoal py-3 px-5 rounded-lg border border-soft-pink/30 flex items-center justify-center"
               >
                 <Calendar className="w-5 h-5 mr-2" />
                 Sign Up for Meetups
               </a>
               <a 
-                href="#" 
+                href="/contact" 
                 className="bg-white hover:bg-cream transition-colors text-charcoal py-3 px-5 rounded-lg border border-soft-pink/30 flex items-center justify-center"
               >
                 <Heart className="w-5 h-5 mr-2" />

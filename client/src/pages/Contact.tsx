@@ -53,8 +53,9 @@ const Contact = () => {
                   <h2 className="text-2xl md:text-3xl font-cursive text-tan-dark mb-4">Send a Message</h2>
                   <div className="w-20 h-1 bg-soft-pink mb-6"></div>
                   <p className="text-charcoal/80">
-                    Have a question or want to connect? Fill out the form below and we'll 
-                    get back to you as soon as possible.
+                    Have a question, prayer request, or want to join our community? Fill out the form below 
+                    and we'll get back to you as soon as possible. Please select the appropriate reason 
+                    so we know what you're reaching out about.
                   </p>
                 </div>
                 
@@ -100,8 +101,10 @@ const Contact = () => {
                         <option value="">Select a reason</option>
                         <option value="general">General Inquiry</option>
                         <option value="prayer">Prayer Request</option>
+                        <option value="meetups">Sign Up for Meetups</option>
+                        <option value="coaching">Request Coaching</option>
+                        <option value="join">Join the Circle</option>
                         <option value="speaking">Speaking Engagement</option>
-                        <option value="community">Join Our Community</option>
                         <option value="other">Other</option>
                       </select>
                     </div>
