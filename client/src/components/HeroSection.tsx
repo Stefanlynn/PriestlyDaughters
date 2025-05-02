@@ -1,7 +1,6 @@
-import { useEffect, useRef } from 'react';
-import { ChevronDown } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
 
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   
   useEffect(() => {
@@ -40,27 +39,40 @@ const HeroSection = () => {
           loop
           playsInline
           preload="auto"
-          poster="/images/video-poster.jpg" // Optional: Add a poster image
         >
           <source src="/videos/background.mov" type="video/quicktime" />
         </video>
       </div>
       
       {/* Black overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-40 z-20"></div>
       
       {/* Content */}
-      <div className="relative min-h-screen flex items-center justify-center">
-        <div className="text-center mt-16 flex flex-col items-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-cursive text-white tracking-wider handwriting mb-8">
+      <div className="relative z-30 min-h-screen flex items-center justify-center">
+        <div className="text-center flex flex-col items-center">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-cursive text-white tracking-wider mb-10 drop-shadow-lg">
             Priestly Daughters
           </h1>
+          
           <button 
             onClick={scrollToFirstSection}
-            className="animate-bounce-slow bg-transparent border-none cursor-pointer"
+            className="mt-8 animate-bounce bg-transparent border-none cursor-pointer"
             aria-label="Scroll to content"
           >
-            <ChevronDown className="h-12 w-12 text-white hover:text-white/80 transition-colors" strokeWidth={2} />
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="48" 
+              height="48" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              className="text-white hover:text-white/80 transition-colors"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </button>
         </div>
       </div>
