@@ -1,0 +1,74 @@
+<!--
+Netlify Integration Setup (Full Compatibility + CMS Access)
+
+This project is designed to be deployed on Netlify. Please keep the current styling and layout intact.
+The following features are integrated using Netlify-compatible standards:
+
+1. Contact Form:
+   - Uses Netlify Forms to receive submissions.
+   - Required: 
+       <form name="contact" method="POST" data-netlify="true">
+       <input type="hidden" name="form-name" value="contact" />
+   - Submitted data will appear in the Netlify dashboard (Forms tab).
+   - Optional: Use Zapier or Make (Integromat) to forward form responses to email, Airtable, Google Sheets, Mailchimp, etc.
+
+2. Subscribe Form:
+   - Also uses Netlify Forms or embedded HTML forms from Mailchimp, ConvertKit, or similar services.
+   - To use Netlify Forms: 
+       <form name="subscribe" method="POST" data-netlify="true">
+       <input type="hidden" name="form-name" value="subscribe" />
+
+3. Blog Updates (Content Management via Netlify CMS):
+   - Add an `/admin/` folder to enable a CMS dashboard for editing blog content without coding.
+   - Files needed:
+     → /admin/index.html:
+       <!doctype html>
+       <html>
+         <head>
+           <meta charset="utf-8">
+           <title>Content Manager</title>
+           <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+         </head>
+         <body></body>
+       </html>
+     → /admin/config.yml (controls what content can be edited):
+       backend:
+         name: git-gateway
+         branch: main
+
+       media_folder: "images/uploads"
+       public_folder: "/images/uploads"
+
+       collections:
+         - name: "blog"
+           label: "Blog"
+           folder: "posts"
+           create: true
+           slug: "{{slug}}"
+           fields:
+             - { label: "Title", name: "title", widget: "string" }
+             - { label: "Body", name: "body", widget: "markdown" }
+
+   - Requires Git-based deployment (GitHub + Netlify + Identity) for editing content via CMS.
+   - Netlify Identity must be enabled in your Netlify dashboard to allow secure login.
+
+4. Hosting Structure:
+   - Project is a static site (HTML/CSS/JS).
+   - No build tools required unless you're using a framework.
+   - You may include a `netlify.toml` file for custom redirects, deploy options, or headers:
+     Example:
+       [build]
+         publish = "dist"
+         command = ""
+
+       [[redirects]]
+         from = "/*"
+         to = "/index.html"
+         status = 200
+
+5. Final Notes:
+   - DO NOT alter the visual design—this prompt is solely for adding functionality.
+   - All additions (forms, CMS access, email forwarding) are hidden from public view unless linked in navigation.
+   - To access CMS, visit: yoursite.com/admin after deployment.
+
+-->
