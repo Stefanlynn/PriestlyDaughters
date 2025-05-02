@@ -62,8 +62,16 @@
     @apply border-border;
   }
 
+  html {
+    height: -webkit-fill-available;
+  }
+  
   body {
     @apply bg-cream text-charcoal antialiased overflow-x-hidden font-sans;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    will-change: scroll-position;
+    overscroll-behavior-y: none; /* Prevents bouncing/overscrolling effects */
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -176,9 +184,6 @@
 /* Mobile menu styles */
 .mobile-menu-open {
   overflow: hidden !important;
-  height: 100% !important;
-  position: fixed !important;
-  width: 100% !important;
 }
 
 /* Fixed positioning for mobile menu to cover entire screen */
@@ -192,6 +197,9 @@
   height: 100vh !important;
   background-color: #000000 !important;
   z-index: 9999 !important;
+  touch-action: none !important; /* Prevents default touch actions */
+  -webkit-overflow-scrolling: touch !important; /* Enables momentum scrolling for iOS */
+  overflow-y: auto !important; /* Enable scrolling within the menu if needed */
 }
 
 

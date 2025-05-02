@@ -10,26 +10,18 @@ const Header = () => {
     const newMenuState = !isMenuOpen;
     setIsMenuOpen(newMenuState);
     
-    // Prevent body scroll and add additional styles when menu is open
+    // Simpler way to handle overflow that allows smoother transitions
     if (newMenuState) {
-      // Prevent scrolling
+      // Just prevent scrolling without fixed positioning to allow smoother animation
       document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-      document.body.style.height = '100%';
       
-      // Apply more specific styling to ensure content is hidden
-      const rootElement = document.documentElement;
-      rootElement.classList.add('mobile-menu-open');
+      // Apply a class for additional styling
+      document.documentElement.classList.add('mobile-menu-open');
     } else {
       // Reset styles when menu closes
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.height = '';
       
-      const rootElement = document.documentElement;
-      rootElement.classList.remove('mobile-menu-open');
+      document.documentElement.classList.remove('mobile-menu-open');
     }
   };
   

@@ -39,6 +39,12 @@ const HeroSection: React.FC = () => {
           loop
           playsInline
           preload="auto"
+          poster="/images/powellfam-16.JPG" 
+          style={{ 
+            transform: 'translate3d(0, 0, 0)',
+            backfaceVisibility: 'hidden',
+            perspective: 1000
+          }}
         >
           <source src="/videos/background.mov" type="video/quicktime" />
         </video>
