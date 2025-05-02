@@ -8,14 +8,20 @@ import NotFound from "@/pages/not-found";
 import BlogPost from "./pages/blog/BlogPost";
 import BlogIndex from "./pages/blog/BlogIndex";
 import About from "./pages/About";
+import Community from "./pages/Community";
+import Resources from "./pages/Resources";
+import Contact from "./pages/Contact";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
+      <Route path="/community" component={Community} />
       <Route path="/blog" component={BlogIndex} />
       <Route path="/blog/:slug" component={BlogPost} />
+      <Route path="/resources" component={Resources} />
+      <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
   );
