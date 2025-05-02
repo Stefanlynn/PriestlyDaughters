@@ -19,10 +19,21 @@ const HeroSection = () => {
     const firstSection = document.querySelector('section.bg-cream');
     
     if (firstSection) {
-      firstSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+      // Add a little delay to make the animation feel more intentional
+      setTimeout(() => {
+        firstSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 100);
+      
+      // Add the scroll-smooth class to html to ensure smooth scrolling
+      document.documentElement.classList.add('scroll-smooth');
+      
+      // Optional: Remove the class after scrolling is complete to avoid affecting other interactions
+      setTimeout(() => {
+        document.documentElement.classList.remove('scroll-smooth');
+      }, 1000);
     }
   };
   
@@ -57,10 +68,12 @@ const HeroSection = () => {
           </h1>
           <button 
             onClick={scrollToFirstSection}
-            className="animate-bounce-slow bg-transparent border-none cursor-pointer"
+            className="animate-bounce-slow bg-transparent border-none cursor-pointer relative mt-6 group"
             aria-label="Scroll to content"
           >
-            <ChevronDown className="h-12 w-12 text-white hover:text-white/80 transition-colors" strokeWidth={2} />
+            <div className="absolute inset-0 bg-white/10 rounded-full scale-75 group-hover:scale-100 opacity-0 group-hover:opacity-30 transition-all duration-300"></div>
+            <ChevronDown className="h-12 w-12 text-white group-hover:text-soft-pink transition-colors duration-300" strokeWidth={2.5} />
+            <span className="sr-only">Scroll down</span>
           </button>
         </div>
       </div>
