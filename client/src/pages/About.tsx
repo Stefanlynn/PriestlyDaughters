@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'wouter';
 import { ArrowLeft } from 'lucide-react';
@@ -183,6 +184,8 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

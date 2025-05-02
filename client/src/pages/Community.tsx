@@ -10,6 +10,7 @@ import {
   MessageCircle
 } from 'lucide-react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import silhouetteImg from "@assets/silhouette-of-reaching-helping-hand-hope-and-support-each-other-over-sunset-people-han-SBI-349512636.jpg";
 
 const Community = () => {
@@ -176,6 +177,8 @@ const Community = () => {
           </span>
         </Link>
       </div>
+      
+      <Footer />
     </div>
   );
 };
