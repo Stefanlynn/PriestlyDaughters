@@ -8,8 +8,8 @@ const Footer = () => {
     <footer className="py-12 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         {/* Add Logo above everything else */}
-        <div className="flex justify-center mb-8">
-          <div className="w-12 h-12">
+        <div className="flex justify-center mb-10">
+          <div className="w-20 h-20">
             <Logo />
           </div>
         </div>
