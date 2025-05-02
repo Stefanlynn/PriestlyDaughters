@@ -17,8 +17,10 @@ const BlogPost: React.FC = () => {
         <div className="container mx-auto px-4 py-12 text-center">
           <h1 className="text-3xl font-light text-charcoal mb-4">Blog Post Not Found</h1>
           <p className="mb-8">Sorry, the blog post you're looking for doesn't exist.</p>
-          <Link href="/" className="text-tan-dark hover:text-tan font-medium">
-            &larr; Back to Home
+          <Link href="/">
+            <span className="text-tan-dark hover:text-tan font-medium">
+              &larr; Back to Home
+            </span>
           </Link>
         </div>
       </div>
@@ -66,19 +68,30 @@ const BlogPost: React.FC = () => {
       {/* Content section */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-3xl mx-auto">
-          <Link href="/" className="inline-flex items-center text-tan-dark hover:text-tan-light mb-8 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
+          <Link href="/">
+            <span className="inline-flex items-center text-tan-dark hover:text-tan-light mb-8 transition-colors cursor-pointer">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </span>
           </Link>
           
           <div className="prose prose-lg max-w-none">
             {formattedContent}
           </div>
           
-          <div className="mt-12 pt-8 border-t border-tan-light/20">
-            <Link href="/" className="inline-flex items-center text-tan-dark hover:text-tan-light transition-colors">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
+          <div className="mt-12 pt-8 border-t border-tan-light/20 flex flex-wrap gap-6">
+            <Link href="/">
+              <span className="inline-flex items-center text-tan-dark hover:text-tan-light transition-colors cursor-pointer">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Home
+              </span>
+            </Link>
+            
+            <Link href="/blog">
+              <span className="inline-flex items-center text-tan-dark hover:text-tan-light transition-colors cursor-pointer">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Blog
+              </span>
             </Link>
           </div>
         </div>
