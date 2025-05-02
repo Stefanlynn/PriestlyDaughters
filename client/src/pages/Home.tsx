@@ -73,11 +73,15 @@ const Home = () => {
             {/* Right side - Image */}
             <div className="md:w-1/2">
               <div className="relative">
-                <img 
-                  src="/images/powellfam-16.JPG" 
-                  alt="Elizabeth Powell" 
-                  className="rounded-lg shadow-xl w-full max-w-md mx-auto"
-                />
+                <div className="relative rounded-lg overflow-hidden w-full max-w-md mx-auto shadow-xl">
+                  <img 
+                    src="/images/powellfam-16.JPG" 
+                    alt="Elizabeth Powell" 
+                    className="w-full"
+                  />
+                  {/* Black overlay */}
+                  <div className="absolute inset-0 bg-black opacity-20 mix-blend-multiply"></div>
+                </div>
                 {/* Decorative element */}
                 <div className="absolute -bottom-5 -right-5 w-1/3 h-1/3 bg-tan-light rounded-lg -z-10"></div>
                 <div className="absolute -top-5 -left-5 w-1/4 h-1/4 border-2 border-tan-dark rounded-lg -z-10"></div>
