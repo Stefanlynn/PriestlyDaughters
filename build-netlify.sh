@@ -10,17 +10,26 @@ rm -rf dist
 echo "Building frontend with Vite..."
 npx vite build
 
-# Copy Netlify configuration files if needed
-if [ -f "_redirects" ]; then
-  echo "Copying _redirects file to dist folder..."
-  cp _redirects dist/
-fi
+# Copy Netlify configuration files
+echo "Copying Netlify configuration files..."
+cp public/_redirects dist/ 2>/dev/null || echo "No _redirects file found"
+cp public/404.html dist/ 2>/dev/null || echo "No 404.html file found"
+cp public/form-fallback.html dist/ 2>/dev/null || echo "No form-fallback.html file found"
 
-# Move admin folder to dist if it exists
+# Move admin folder to dist
+echo "Copying Netlify CMS admin folder..."
 if [ -d "public/admin" ]; then
-  echo "Copying admin folder to dist..."
   mkdir -p dist/admin
   cp -r public/admin/* dist/admin/
+  echo "Admin folder copied successfully"
+else
+  echo "No admin folder found in public directory"
+fi
+
+# Create content folder if missing (for Netlify CMS)
+if [ ! -d "dist/content" ]; then
+  echo "Creating content directory for CMS..."
+  mkdir -p dist/content/{blog,resources,pages}
 fi
 
 echo "Build completed. Contents of dist folder:"
