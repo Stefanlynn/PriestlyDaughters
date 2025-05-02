@@ -1,7 +1,9 @@
-import type { Express, Request, Response } from "express";
+import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { ZodError, z } from "zod";
+import * as path from "path";
+import * as fs from "fs";
 
 // Define a schema for the subscription request
 const subscribeSchema = z.object({
@@ -9,6 +11,15 @@ const subscribeSchema = z.object({
 });
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Special route for thank-you.html
+  app.get("/thank-you.html", (req: Request, res: Response) => {
+    const thankYouPath = path.resolve(process.cwd(), "public", "thank-you.html");
+    if (fs.existsSync(thankYouPath)) {
+      res.sendFile(thankYouPath);
+    } else {
+      res.redirect("/thank-you");
+    }
+  });
   // API endpoint for subscription
   app.post("/api/subscribe", (req: Request, res: Response) => {
     try {
