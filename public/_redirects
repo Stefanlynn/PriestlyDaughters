@@ -1,8 +1,2 @@
-# Netlify redirects file
-
-# Explicitly serve thank-you pages directly (highest priority)
-/thank-you.html              /thank-you.html              200
-/subscribe-thank-you.html    /subscribe-thank-you.html    200
-
-# Ensure SPA routing works correctly for all other routes
-/*    /index.html   200
+/thank-you /thank-you.html 200  
+/subscribe-thank-you /subscribe-thank-you.html 200
