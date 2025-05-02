@@ -1,41 +1,27 @@
 #!/bin/bash
 
-# Ensure we're in the project directory
-cd "$(dirname "$0")"
+# This script is for building only the front-end portion of the application
+# specifically for Netlify deployment
 
-# Remove previous build artifacts
-rm -rf dist site.zip
+# Clean up any existing dist folder
+rm -rf dist
 
-# Build the client-side application with our Netlify config
-echo "Building client application for Netlify..."
+# Run Vite build for the frontend only
+echo "Building frontend with Vite..."
 npx vite build
 
-# Check if build was successful
-if [ ! -d "dist" ]; then
-  echo "Build failed! Check the error messages above."
-  exit 1
+# Copy Netlify configuration files if needed
+if [ -f "_redirects" ]; then
+  echo "Copying _redirects file to dist folder..."
+  cp _redirects dist/
 fi
 
-# Copy Netlify configuration if it exists
-if [ -f "netlify.toml" ]; then
-  cp netlify.toml dist/
-fi
-
-# Copy public admin files if they exist
+# Move admin folder to dist if it exists
 if [ -d "public/admin" ]; then
+  echo "Copying admin folder to dist..."
   mkdir -p dist/admin
   cp -r public/admin/* dist/admin/
 fi
 
-# Copy content directory if it exists (for CMS content)
-if [ -d "content" ]; then
-  cp -r content dist/
-fi
-
-# Create ZIP archive for Netlify deployment
-cd dist
-zip -r ../site.zip *
-cd ..
-
-echo "Build completed successfully!"
-echo "Netlify deployment files prepared! You can now upload site.zip to Netlify or deploy directly from GitHub."
+echo "Build completed. Contents of dist folder:"
+ls -la dist
