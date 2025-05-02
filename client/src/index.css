@@ -32,6 +32,7 @@
     --cream: 45 33% 94%;
     --offwhite: 40 18% 97%;
     --charcoal: 0 0% 20%;
+    --soft-pink: 348 33% 92%;
   }
 
   .dark {
@@ -89,6 +90,10 @@
 
 .bg-offwhite {
   background-color: hsl(var(--offwhite));
+}
+
+.bg-soft-pink {
+  background-color: hsl(var(--soft-pink));
 }
 
 .text-charcoal {

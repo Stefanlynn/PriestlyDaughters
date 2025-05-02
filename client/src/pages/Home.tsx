@@ -35,11 +35,28 @@ const Home = () => {
               <p className="text-xl md:text-2xl text-charcoal mb-12 font-light">
                 This space was created for women like you.
               </p>
-              <div className="max-w-2xl mx-auto border-t border-b border-charcoal/20 py-8">
-                <p className="text-xl md:text-2xl text-charcoal font-light italic">
-                  Women called. Chosen. Ready to grow deeper, rise higher, and walk fully in who God created them to be.
-                </p>
-              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Quote and Connect Section */}
+      <section className="py-16 bg-soft-pink">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="mb-12">
+              <p className="text-xl md:text-2xl text-charcoal font-light italic">
+                Women called. Chosen. Ready to grow deeper, rise higher, and walk fully in who God created them to be.
+              </p>
+            </div>
+            
+            <div className="mt-10">
+              <h3 className="font-cursive text-3xl md:text-4xl text-charcoal mb-8">
+                Let's Connect
+              </h3>
+              <button className="px-8 py-3 bg-white text-charcoal rounded-full shadow-md hover:shadow-lg transition-all border border-tan-dark/20">
+                Get Started
+              </button>
             </div>
           </div>
         </div>
