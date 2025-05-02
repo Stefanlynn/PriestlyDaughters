@@ -29,6 +29,7 @@
     --tan-light: 36 33% 84%;
     --tan: 33 35% 74%;
     --tan-dark: 33 30% 67%;
+    --cream: 45 33% 94%;
     --offwhite: 40 18% 97%;
     --charcoal: 0 0% 20%;
   }
@@ -61,7 +62,7 @@
   }
 
   body {
-    @apply bg-tan text-charcoal antialiased overflow-x-hidden font-sans;
+    @apply bg-cream text-charcoal antialiased overflow-x-hidden font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -80,6 +81,10 @@
 
 .bg-tan-dark {
   background-color: hsl(var(--tan-dark));
+}
+
+.bg-cream {
+  background-color: hsl(var(--cream));
 }
 
 .bg-offwhite {
