@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "./components/ScrollToTop";
 import MediaPreloader from "./components/MediaPreloader";
+import { useOptimizedScroll } from "./hooks/useOptimizedScroll";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 import BlogPost from "./pages/blog/BlogPost";
@@ -16,6 +17,7 @@ import Contact from "./pages/Contact";
 import ComingSoon from "./pages/ComingSoon";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import { useEffect } from "react";
 
 function Router() {
   return (
@@ -36,6 +38,16 @@ function Router() {
 }
 
 function App() {
+  // Apply smooth scrolling to the entire site
+  useEffect(() => {
+    // Set smooth scrolling on the html element
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    return () => {
+      document.documentElement.style.scrollBehavior = '';
+    };
+  }, []);
+  
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

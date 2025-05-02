@@ -1,15 +1,39 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useIsMobile } from '../hooks/use-mobile';
 
 const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const isMobile = useIsMobile();
   
   useEffect(() => {
-    // Autoplay the video when component mounts
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.error("Video autoplay failed:", error);
-      });
-    }
+    // Use a lower quality video on mobile for better performance
+    const loadVideo = async () => {
+      if (videoRef.current) {
+        // Set up load event handler
+        videoRef.current.onloadeddata = () => {
+          setVideoLoaded(true);
+        };
+        
+        // Attempt to play video
+        try {
+          await videoRef.current.play();
+        } catch (error) {
+          console.error("Video autoplay failed:", error);
+          // Fallback to image if video fails
+          setVideoLoaded(true);
+        }
+      }
+    };
+    
+    loadVideo();
+    
+    // Cleanup
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.onloadeddata = null;
+      }
+    };
   }, []);
   
   // Function to scroll to the first section
@@ -29,21 +53,29 @@ const HeroSection: React.FC = () => {
     <section className="relative min-h-screen overflow-hidden">
       {/* Video background */}
       <div className="absolute inset-0">
-        {/* Placeholder background while video loads */}
-        <div className="absolute inset-0 bg-cream z-0"></div>
+        {/* Placeholder image while video loads - more efficient than video */}
+        <div 
+          className={`absolute inset-0 bg-cream z-0 transition-opacity duration-500 ${videoLoaded ? 'opacity-0' : 'opacity-100'}`}
+          style={{ backgroundImage: `url('/images/powellfam-16.JPG')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        ></div>
+        
+        {/* Video with hardware acceleration */}
         <video
           ref={videoRef}
-          className="absolute w-full h-full object-cover z-10"
+          className={`absolute w-full h-full object-cover z-10 ${videoLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
+          preload={isMobile ? "metadata" : "auto"}
           poster="/images/powellfam-16.JPG" 
           style={{ 
             transform: 'translate3d(0, 0, 0)',
             backfaceVisibility: 'hidden',
-            perspective: 1000
+            perspective: 1000,
+            willChange: 'transform',
+            maxWidth: '100%',
+            maxHeight: '100%'
           }}
         >
           <source src="/videos/background.mov" type="video/quicktime" />
