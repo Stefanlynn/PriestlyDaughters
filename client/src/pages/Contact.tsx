@@ -271,7 +271,7 @@ const Contact = () => {
                     <div className="pt-2">
                       <button 
                         type="submit" 
-                        className="px-8 py-3 rounded-lg bg-soft-pink hover:bg-soft-pink/90 text-white font-medium transition-colors duration-200 flex items-center"
+                        className="px-8 py-3 rounded-lg bg-tan-dark hover:bg-charcoal text-white font-medium transition-colors duration-200 flex items-center shadow-md"
                       >
                         <Send className="w-4 h-4 mr-2" />
                         Send Message
