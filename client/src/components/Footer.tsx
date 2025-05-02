@@ -5,16 +5,16 @@ import Logo from './Logo';
 
 const Footer = () => {
   return (
-    <footer className="py-12 bg-gray-900 text-white">
+    <footer className="py-8 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
         {/* Add Logo above everything else */}
-        <div className="flex justify-center mb-10">
+        <div className="flex justify-center mb-5">
           <div className="w-20 h-20">
             <Logo />
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
           {/* Copyright */}
           <div className="text-sm text-white/70">
             © {new Date().getFullYear()} Priestly Daughters. All rights reserved.
