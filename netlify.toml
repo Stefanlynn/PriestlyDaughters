@@ -15,3 +15,19 @@
   # Set Node version
   NODE_VERSION = "20"
   NPM_VERSION = "10" # You can adjust this based on your needs
+
+# Forms configuration
+[forms]
+  # Contact form settings
+  [forms.contact]
+    # You'll need to set up this email in the Netlify dashboard
+    email_notifications_enabled = true
+    # Use custom email notification template
+    template = "email-templates/contact-notification.html"
+  
+  # Subscribe form settings
+  [forms.subscribe]
+    # Also enable email notifications for subscribe form
+    email_notifications_enabled = true
+    # Use custom email notification template
+    template = "email-templates/subscribe-notification.html"
