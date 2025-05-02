@@ -46,7 +46,7 @@ const BlogSection: React.FC = () => {
           <p className="text-lg text-charcoal/80 max-w-3xl mx-auto font-light">Inspiration, encouragement, and wisdom for your journey of faith and purpose.</p>
         </div>
         
-        <div className="relative max-w-[95%] mx-auto">
+        <div className="relative max-w-[90%] mx-auto">
           {/* Subtle indicator that this is scrollable */}
           <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-16 h-full bg-gradient-to-l from-cream to-transparent pointer-events-none z-10"></div>
           
@@ -55,7 +55,7 @@ const BlogSection: React.FC = () => {
               {blogPosts.map((post, index) => (
                 <div 
                   key={post.id} 
-                  className={`w-[320px] md:w-[375px] px-3 flex-shrink-0 ${index === 0 ? 'ml-0' : ''}`}
+                  className={`w-[330px] md:w-[380px] px-3 flex-shrink-0 ${index === 0 ? 'ml-0' : ''}`}
                 >
                   <BlogCard
                     title={post.title}
@@ -67,16 +67,16 @@ const BlogSection: React.FC = () => {
               ))}
             </div>
           </div>
-          
-          {/* Simple dot indicators to show multiple posts */}
-          <div className="flex justify-center mt-4 gap-2">
-            {blogPosts.slice(0, Math.min(5, blogPosts.length)).map((_, index) => (
-              <div 
-                key={index} 
-                className={`h-1.5 rounded-full ${index === 0 ? 'w-4 bg-tan-dark' : 'w-1.5 bg-tan-light'}`}
-              ></div>
-            ))}
-          </div>
+        </div>
+        
+        {/* Simple dot indicators to show multiple posts */}
+        <div className="flex justify-center mt-6 mb-6 gap-2">
+          {blogPosts.slice(0, Math.min(5, blogPosts.length)).map((_, index) => (
+            <div 
+              key={index} 
+              className={`h-1.5 rounded-full ${index === 0 ? 'w-4 bg-tan-dark' : 'w-1.5 bg-tan-light'}`}
+            ></div>
+          ))}
         </div>
         
         <div className="mt-12 text-center">
