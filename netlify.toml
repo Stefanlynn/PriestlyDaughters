@@ -4,7 +4,19 @@
   # Directory to output the build with client artifacts
   publish = "dist"
 
-# Handle single page application routing
+# First redirect rule for thank-you.html
+[[redirects]]
+  from = "/thank-you.html"
+  to = "/thank-you.html"
+  status = 200
+
+# Second redirect rule for subscribe-thank-you.html
+[[redirects]]
+  from = "/subscribe-thank-you.html"
+  to = "/subscribe-thank-you.html"
+  status = 200
+
+# Then handle all other routes with SPA routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -24,6 +36,8 @@
     email_notifications_enabled = true
     # Use custom email notification template
     template = "email-templates/contact-notification.html"
+    # Specify success redirect
+    success_url = "/thank-you.html"
   
   # Subscribe form settings
   [forms.subscribe]
@@ -31,3 +45,5 @@
     email_notifications_enabled = true
     # Use custom email notification template
     template = "email-templates/subscribe-notification.html"
+    # Specify success redirect
+    success_url = "/subscribe-thank-you.html"
