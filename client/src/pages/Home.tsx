@@ -1,4 +1,5 @@
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import BlogSection from '../components/BlogSection';
 import { Link } from "wouter";
@@ -118,6 +119,9 @@ const Home = () => {
       
       {/* Blog Section */}
       <BlogSection />
+      
+      {/* Footer */}
+      <Footer />
     </>
   );
 };
