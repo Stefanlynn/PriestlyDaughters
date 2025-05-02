@@ -71,7 +71,7 @@ const Home = () => {
               <p className="text-xl md:text-2xl font-light mb-8 text-charcoal">
                 I'm Elizebeth Powell. A woman probably a lot like you.
               </p>
-              <div className="space-y-6 text-lg text-charcoal/80 font-light">
+              <div className="space-y-6 text-lg text-charcoal/80 font-light mb-10">
                 <p>
                   For years, I served in leadership—at work, in ministry, and in my home—without fully calling myself a leader. But deep down, I've always known I was called to more.
                 </p>
@@ -81,12 +81,6 @@ const Home = () => {
                 <p>
                   And I'm here to help you walk in the purpose God already placed inside you.
                 </p>
-              </div>
-              
-              <div className="mt-8">
-                <button className="px-8 py-3 bg-white text-charcoal rounded-full shadow-md hover:shadow-lg transition-all border border-tan-dark/20">
-                  Meet Elizabeth
-                </button>
               </div>
             </div>
             
@@ -107,6 +101,13 @@ const Home = () => {
                 <div className="absolute -top-5 -left-5 w-1/4 h-1/4 border-2 border-tan-dark rounded-lg -z-10"></div>
               </div>
             </div>
+          </div>
+          
+          {/* Centered button below content */}
+          <div className="mt-16 text-center">
+            <button className="px-8 py-3 bg-white text-charcoal rounded-full shadow-md hover:shadow-lg transition-all border border-tan-dark/20">
+              Meet Elizabeth
+            </button>
           </div>
         </div>
       </section>
