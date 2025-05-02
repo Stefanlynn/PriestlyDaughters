@@ -79,19 +79,20 @@ const BlogPost: React.FC = () => {
             {formattedContent}
           </div>
           
-          <div className="mt-12 pt-8 border-t border-tan-light/20 flex flex-wrap gap-6">
-            <Link href="/">
-              <span className="inline-flex items-center text-tan-dark hover:text-tan-light transition-colors cursor-pointer">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
-              </span>
-            </Link>
+          <div className="mt-12 pt-8 border-t border-tan-light/20 flex flex-col items-center">
+            <div className="flex flex-wrap gap-6 w-full mb-8">
+              <Link href="/">
+                <span className="inline-flex items-center text-tan-dark hover:text-tan-light transition-colors cursor-pointer">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back to Home
+                </span>
+              </Link>
+            </div>
             
             <Link href="/blog">
-              <span className="inline-flex items-center text-tan-dark hover:text-tan-light transition-colors cursor-pointer">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Blog
-              </span>
+              <div className="inline-block px-8 py-3 bg-white text-charcoal rounded-full shadow-md hover:shadow-lg transition-all border border-tan-dark/20 cursor-pointer">
+                View All Posts
+              </div>
             </Link>
           </div>
         </div>
