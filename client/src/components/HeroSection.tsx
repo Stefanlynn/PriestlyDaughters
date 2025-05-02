@@ -1,4 +1,3 @@
-import Logo from './Logo';
 import { useEffect, useRef } from 'react';
 
 const HeroSection = () => {
@@ -36,13 +35,13 @@ const HeroSection = () => {
       
       {/* Content */}
       <div className="relative min-h-screen flex items-center justify-center">
-        <div className="flex flex-row items-center gap-8 animate-fade-in">
-          <div className="w-40 md:w-48 lg:w-56">
-            <Logo />
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-wider">
+        <div className="text-center animate-fade-in mt-16">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white tracking-wider mb-6">
             Priestly Daughters
           </h1>
+          <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto opacity-90">
+            Elegance and Grace
+          </p>
         </div>
       </div>
     </section>

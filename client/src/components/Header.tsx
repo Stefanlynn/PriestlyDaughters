@@ -1,136 +1,42 @@
-import { useState, useEffect } from 'react';
+import Logo from './Logo';
 import { Link } from 'wouter';
-import { Menu } from 'lucide-react';
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial scroll position
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
   return (
-    <header 
-      className={`w-full fixed top-0 z-10 transition duration-300 ${
-        scrolled ? 'bg-tan shadow-sm' : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Left side navigation */}
-        <nav className="hidden md:block">
-          <ul className="flex space-x-10">
-            <li>
-              <Link 
-                href="/" 
-                className="font-serif text-charcoal hover:text-tan-dark transition duration-300 text-sm uppercase tracking-widest"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="/about" 
-                className="font-serif text-charcoal hover:text-tan-dark transition duration-300 text-sm uppercase tracking-widest"
-              >
-                About
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        
-        {/* Mobile menu button */}
-        <button 
-          className="md:hidden focus:outline-none" 
-          aria-label="Toggle Menu"
-          onClick={toggleMobileMenu}
-        >
-          <Menu className="w-6 h-6" />
-        </button>
-        
-        {/* Right side navigation */}
-        <div className="hidden md:block">
-          <ul className="flex space-x-10">
-            <li>
-              <Link 
-                href="/collections" 
-                className="font-serif text-charcoal hover:text-tan-dark transition duration-300 text-sm uppercase tracking-widest"
-              >
-                Collections
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="/contact" 
-                className="font-serif text-charcoal hover:text-tan-dark transition duration-300 text-sm uppercase tracking-widest"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      {/* Mobile menu */}
-      <div 
-        className={`md:hidden bg-tan-light absolute w-full py-4 shadow-md transition-all duration-300 ${
-          mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-      >
-        <ul className="flex flex-col items-center space-y-4">
-          <li>
-            <Link 
-              href="/" 
-              className="font-serif text-charcoal hover:text-tan-dark transition duration-300 text-sm uppercase tracking-widest"
-              onClick={() => setMobileMenuOpen(false)}
-            >
+    <header className="fixed top-0 w-full z-50 bg-black bg-opacity-30 backdrop-blur-sm">
+      <div className="container mx-auto px-4 py-3">
+        <div className="flex justify-between items-center">
+          {/* Logo on the left */}
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="w-12 h-12">
+              <Logo />
+            </div>
+            <h1 className="text-2xl font-serif text-white">Priestly Daughters</h1>
+          </Link>
+          
+          {/* Navigation on the right */}
+          <nav className="hidden md:flex space-x-8">
+            <Link href="/" className="text-white hover:text-gray-300 transition-colors">
               Home
             </Link>
-          </li>
-          <li>
-            <Link 
-              href="/about" 
-              className="font-serif text-charcoal hover:text-tan-dark transition duration-300 text-sm uppercase tracking-widest"
-              onClick={() => setMobileMenuOpen(false)}
-            >
+            <Link href="/about" className="text-white hover:text-gray-300 transition-colors">
               About
             </Link>
-          </li>
-          <li>
-            <Link 
-              href="/collections" 
-              className="font-serif text-charcoal hover:text-tan-dark transition duration-300 text-sm uppercase tracking-widest"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Collections
+            <Link href="/services" className="text-white hover:text-gray-300 transition-colors">
+              Services
             </Link>
-          </li>
-          <li>
-            <Link 
-              href="/contact" 
-              className="font-serif text-charcoal hover:text-tan-dark transition duration-300 text-sm uppercase tracking-widest"
-              onClick={() => setMobileMenuOpen(false)}
-            >
+            <Link href="/contact" className="text-white hover:text-gray-300 transition-colors">
               Contact
             </Link>
-          </li>
-        </ul>
+          </nav>
+          
+          {/* Mobile menu button */}
+          <button className="md:hidden text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
   );
