@@ -69,9 +69,11 @@ const BlogSection: React.FC = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <a href="/blog" className="inline-block px-8 py-3 bg-white text-charcoal rounded-full shadow-md hover:shadow-lg transition-all border border-tan-dark/20">
-            View All Posts
-          </a>
+          <Link href="/blog">
+            <div className="inline-block px-8 py-3 bg-white text-charcoal rounded-full shadow-md hover:shadow-lg transition-all border border-tan-dark/20 cursor-pointer">
+              View All Posts
+            </div>
+          </Link>
         </div>
       </div>
     </section>
