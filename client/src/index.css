@@ -220,4 +220,13 @@
 
 /* Smooth scrolling for the entire application is enabled on the html element */
 
+/* About page specific styling to prevent header overlap */
+.about-page-content {
+  padding-top: 80px !important; /* Match header height */
+}
+@media (min-width: 768px) {
+  .about-page-content {
+    padding-top: 88px !important; /* Match header height for desktop */
+  }
+}
 
