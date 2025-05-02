@@ -8,6 +8,7 @@ import { ArrowLeft } from 'lucide-react';
 const images = [
   '/images/powellfam-4.JPG',
   '/images/powellfam-16.JPG',
+  '/images/powellfam-20.JPG',
   '/images/powellfam-29.JPG',
   '/images/powellfam-38.JPG',
 ];
