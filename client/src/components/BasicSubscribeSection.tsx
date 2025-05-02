@@ -11,7 +11,7 @@ const BasicSubscribeSection = () => {
   
   const handleSubmit = async (e: React.FormEvent) => {
     // Don't prevent default as we want the form to naturally submit to Netlify 
-    // and redirect to the thank-you page
+    // and redirect to Netlify's default success page
     
     if (!email) {
       e.preventDefault(); // Only prevent default if validation fails
@@ -23,9 +23,8 @@ const BasicSubscribeSection = () => {
     // Set submitting state (this will show the loading state until redirect happens)
     setIsSubmitting(true);
     
-    // Let the form naturally submit to Netlify and redirect
-    // No need to handle form submission manually as Netlify
-    // will handle the redirect to its default success page
+    // Let the form naturally submit to Netlify
+    // Netlify will handle the redirect to its default success page
   };
   
   return (

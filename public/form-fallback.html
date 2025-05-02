@@ -7,7 +7,7 @@
 </head>
 <body>
   <!-- Hidden contact form for Netlify -->
-  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
     <input type="text" name="name" />
     <input type="email" name="email" />
     <select name="subject"></select>
@@ -26,7 +26,12 @@
   </form>
 
   <!-- Hidden subscribe form for Netlify -->
-  <form name="subscribe" netlify netlify-honeypot="bot-field" hidden>
+  <form name="subscribe" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="email" name="email" />
+  </form>
+  
+  <!-- Hidden subscribe-secondary form for Netlify -->
+  <form name="subscribe-secondary" data-netlify="true" netlify-honeypot="bot-field" hidden>
     <input type="email" name="email" />
   </form>
 </body>
