@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'wouter';
 import { ArrowLeft, Mail, Instagram, Facebook, Calendar, Youtube, MapPin, Send, Heart } from 'lucide-react';
 import Header from '../components/Header';
 
 const Contact = () => {
+  const [reasonForContact, setReasonForContact] = useState('');
+  
+  const handleReasonChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setReasonForContact(e.target.value);
+  };
+
   return (
     <div className="min-h-screen bg-cream">
       <Header />
@@ -93,29 +99,371 @@ const Contact = () => {
                     
                     <div>
                       <label htmlFor="subject" className="block text-charcoal font-medium mb-2 text-sm">Reason for Contact</label>
-                      <select 
-                        name="subject" 
-                        id="subject" 
-                        className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
-                      >
-                        <option value="">Select a reason</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="prayer">Prayer Request</option>
-                        <option value="coaching">Request Coaching</option>
-                        <option value="speaking">Speaking Engagement</option>
-                        <option value="other">Other</option>
-                      </select>
+                      <div className="relative">
+                        <select 
+                          name="subject" 
+                          id="subject" 
+                          value={reasonForContact}
+                          onChange={handleReasonChange}
+                          className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                        >
+                          <option value="">Select a reason</option>
+                          <option value="general">General Inquiry</option>
+                          <option value="prayer">Prayer Request</option>
+                          <option value="coaching">Request Coaching</option>
+                          <option value="speaking">Speaking Engagement</option>
+                          <option value="other">Other</option>
+                        </select>
+                        {reasonForContact && (
+                          <div className="absolute right-3 top-3 text-soft-pink/70 animate-pulse-once text-xs">
+                            Additional fields available
+                          </div>
+                        )}
+                      </div>
                     </div>
                     
+                    {/* Dynamic fields based on reason for contact */}
+                    {reasonForContact === 'speaking' && (
+                      <div className="space-y-6 border-l-4 border-soft-pink/40 pl-4 py-2 bg-cream/20 rounded-r-lg">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div>
+                            <label htmlFor="eventName" className="block text-charcoal font-medium mb-2 text-sm">Event Name / Title</label>
+                            <input 
+                              type="text" 
+                              name="eventName" 
+                              id="eventName" 
+                              className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                              placeholder="e.g. Women's Conference 2025"
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="eventDate" className="block text-charcoal font-medium mb-2 text-sm">Date(s) of the Event</label>
+                            <input 
+                              type="text" 
+                              name="eventDate" 
+                              id="eventDate" 
+                              className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                              placeholder="Single date or date range"
+                            />
+                          </div>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div>
+                            <label htmlFor="eventLocation" className="block text-charcoal font-medium mb-2 text-sm">Event Location</label>
+                            <input 
+                              type="text" 
+                              name="eventLocation" 
+                              id="eventLocation" 
+                              className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                              placeholder="City, State, or 'Virtual' if online"
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="organizationName" className="block text-charcoal font-medium mb-2 text-sm">Organization / Church Name</label>
+                            <input 
+                              type="text" 
+                              name="organizationName" 
+                              id="organizationName" 
+                              className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                              placeholder="Your organization's name"
+                            />
+                          </div>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div>
+                            <label htmlFor="eventType" className="block text-charcoal font-medium mb-2 text-sm">Type of Event</label>
+                            <select 
+                              name="eventType" 
+                              id="eventType" 
+                              className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                            >
+                              <option value="">Select event type</option>
+                              <option value="Conference">Conference</option>
+                              <option value="Church Service">Church Service</option>
+                              <option value="Panel">Panel</option>
+                              <option value="Workshop">Workshop</option>
+                              <option value="Retreat">Retreat</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label htmlFor="audienceSize" className="block text-charcoal font-medium mb-2 text-sm">Estimated Audience Size</label>
+                            <input 
+                              type="text" 
+                              name="audienceSize" 
+                              id="audienceSize" 
+                              className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                              placeholder="Approximate number of attendees"
+                            />
+                          </div>
+                        </div>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div>
+                            <label htmlFor="speakerRole" className="block text-charcoal font-medium mb-2 text-sm">Expected Role</label>
+                            <select 
+                              name="speakerRole" 
+                              id="speakerRole" 
+                              className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                            >
+                              <option value="">Select role</option>
+                              <option value="Keynote Speaker">Keynote Speaker</option>
+                              <option value="Workshop Facilitator">Workshop Facilitator</option>
+                              <option value="Panelist">Panelist</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label htmlFor="budget" className="block text-charcoal font-medium mb-2 text-sm">Budget / Honorarium (optional)</label>
+                            <input 
+                              type="text" 
+                              name="budget" 
+                              id="budget" 
+                              className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                              placeholder="Available budget for the speaker"
+                            />
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="topicTheme" className="block text-charcoal font-medium mb-2 text-sm">Topic or Theme</label>
+                          <input 
+                            type="text" 
+                            name="topicTheme" 
+                            id="topicTheme" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                            placeholder="What you'd like Elizabeth to speak on"
+                          />
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="contactPersonDetails" className="block text-charcoal font-medium mb-2 text-sm">Contact Person's Details</label>
+                          <input 
+                            type="text" 
+                            name="contactPersonDetails" 
+                            id="contactPersonDetails" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                            placeholder="Full Name, Email, and Phone Number"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    
+                    {reasonForContact === 'prayer' && (
+                      <div className="space-y-6 border-l-4 border-soft-pink/40 pl-4 py-2 bg-cream/20 rounded-r-lg">
+                        <div>
+                          <label htmlFor="prayerType" className="block text-charcoal font-medium mb-2 text-sm">Type of Prayer Request</label>
+                          <select 
+                            name="prayerType" 
+                            id="prayerType" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                          >
+                            <option value="">Select a prayer type</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Family">Family</option>
+                            <option value="Healing">Healing</option>
+                            <option value="Guidance">Guidance</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="prayerUrgency" className="block text-charcoal font-medium mb-2 text-sm">Urgency</label>
+                          <select 
+                            name="prayerUrgency" 
+                            id="prayerUrgency" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                          >
+                            <option value="">Select urgency level</option>
+                            <option value="Immediate">Immediate (within 24 hours)</option>
+                            <option value="This Week">This Week</option>
+                            <option value="Ongoing">Ongoing</option>
+                          </select>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="shareWithCommunity" className="block text-charcoal font-medium mb-2 text-sm">Share With Community?</label>
+                          <select 
+                            name="shareWithCommunity" 
+                            id="shareWithCommunity" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                          >
+                            <option value="No">No - Keep private</option>
+                            <option value="Yes, Anonymous">Yes, but keep me anonymous</option>
+                            <option value="Yes, With Name">Yes, can share my name</option>
+                          </select>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {reasonForContact === 'general' && (
+                      <div className="space-y-6 border-l-4 border-soft-pink/40 pl-4 py-2 bg-cream/20 rounded-r-lg">
+                        <div>
+                          <label htmlFor="inquiryTopic" className="block text-charcoal font-medium mb-2 text-sm">Topic of Inquiry</label>
+                          <select 
+                            name="inquiryTopic" 
+                            id="inquiryTopic" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                          >
+                            <option value="">Select topic</option>
+                            <option value="Ministry Information">Ministry Information</option>
+                            <option value="Events">Upcoming Events</option>
+                            <option value="Resources">Resources</option>
+                            <option value="Volunteer">Volunteer Opportunities</option>
+                            <option value="Community">Community Engagement</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="preferredResponseMethod" className="block text-charcoal font-medium mb-2 text-sm">Preferred Response Method</label>
+                          <select 
+                            name="preferredResponseMethod" 
+                            id="preferredResponseMethod" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                          >
+                            <option value="Email">Email</option>
+                            <option value="Phone">Phone</option>
+                          </select>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="phoneForGeneral" className="block text-charcoal font-medium mb-2 text-sm">Phone Number (if preferred contact method)</label>
+                          <input 
+                            type="tel" 
+                            name="phoneForGeneral" 
+                            id="phoneForGeneral" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                            placeholder="Your phone number"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    
+                    {reasonForContact === 'other' && (
+                      <div className="space-y-6 border-l-4 border-soft-pink/40 pl-4 py-2 bg-cream/20 rounded-r-lg">
+                        <div>
+                          <label htmlFor="otherTopic" className="block text-charcoal font-medium mb-2 text-sm">What is this regarding?</label>
+                          <input 
+                            type="text" 
+                            name="otherTopic" 
+                            id="otherTopic" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                            placeholder="Brief description of your inquiry"
+                          />
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="preferredResponseOther" className="block text-charcoal font-medium mb-2 text-sm">Preferred Response Method</label>
+                          <select 
+                            name="preferredResponseOther" 
+                            id="preferredResponseOther" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                          >
+                            <option value="Email">Email</option>
+                            <option value="Phone">Phone</option>
+                          </select>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="phoneForOther" className="block text-charcoal font-medium mb-2 text-sm">Phone Number (if preferred contact method)</label>
+                          <input 
+                            type="tel" 
+                            name="phoneForOther" 
+                            id="phoneForOther" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                            placeholder="Your phone number"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    
+                    {reasonForContact === 'coaching' && (
+                      <div className="space-y-6 border-l-4 border-soft-pink/40 pl-4 py-2 bg-cream/20 rounded-r-lg">
+                        <div>
+                          <label htmlFor="coachingType" className="block text-charcoal font-medium mb-2 text-sm">Type of Coaching Interest</label>
+                          <select 
+                            name="coachingType" 
+                            id="coachingType" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                          >
+                            <option value="">Select coaching type</option>
+                            <option value="Individual">Individual Coaching</option>
+                            <option value="Group">Group Coaching</option>
+                            <option value="Workshop">Workshop</option>
+                            <option value="Not Sure">Not Sure Yet</option>
+                          </select>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="topicArea" className="block text-charcoal font-medium mb-2 text-sm">Area of Focus</label>
+                          <select 
+                            name="topicArea" 
+                            id="topicArea" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                          >
+                            <option value="">Select focus area</option>
+                            <option value="Spiritual Growth">Spiritual Growth</option>
+                            <option value="Leadership">Leadership</option>
+                            <option value="Personal Development">Personal Development</option>
+                            <option value="Ministry">Ministry</option>
+                            <option value="Other">Other</option>
+                          </select>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="timeframe" className="block text-charcoal font-medium mb-2 text-sm">Preferred Timeframe</label>
+                          <select 
+                            name="timeframe" 
+                            id="timeframe" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                          >
+                            <option value="">Select timeframe</option>
+                            <option value="ASAP">As Soon As Possible</option>
+                            <option value="Next 30 Days">Within the Next 30 Days</option>
+                            <option value="Next 3 Months">Within the Next 3 Months</option>
+                            <option value="Flexible">Flexible / Not Sure Yet</option>
+                          </select>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="preferredContact" className="block text-charcoal font-medium mb-2 text-sm">Best Way to Contact You</label>
+                          <select 
+                            name="preferredContact" 
+                            id="preferredContact" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                          >
+                            <option value="Email">Email</option>
+                            <option value="Phone">Phone</option>
+                          </select>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="phoneNumber" className="block text-charcoal font-medium mb-2 text-sm">Phone Number (if preferred contact method)</label>
+                          <input 
+                            type="tel" 
+                            name="phoneNumber" 
+                            id="phoneNumber" 
+                            className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
+                            placeholder="Your phone number"
+                          />
+                        </div>
+                      </div>
+                    )}
+                    
                     <div>
-                      <label htmlFor="message" className="block text-charcoal font-medium mb-2 text-sm">Message</label>
+                      <label htmlFor="message" className="block text-charcoal font-medium mb-2 text-sm">
+                        {reasonForContact === 'speaking' ? 'Additional Notes or Comments' : 'Message'}
+                      </label>
                       <textarea 
                         name="message" 
                         id="message" 
                         rows={5} 
                         required 
                         className="w-full px-4 py-3 rounded-lg border border-tan-dark/20 focus:outline-none focus:ring-2 focus:ring-soft-pink/40 bg-white/80"
-                        placeholder="Your message here..."
+                        placeholder={reasonForContact === 'speaking' ? 'Any additional details or requirements...' : 'Your message here...'}
                       ></textarea>
                     </div>
                     
