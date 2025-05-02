@@ -147,6 +147,8 @@ const BlogPost: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

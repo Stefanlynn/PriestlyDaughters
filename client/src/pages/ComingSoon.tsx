@@ -1,9 +1,13 @@
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'wouter';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const ComingSoon = () => {
   return (
-    <div className="min-h-screen pt-20 pb-16 flex flex-col">
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
       {/* Coming Soon Content */}
       <section className="flex-grow flex flex-col items-center justify-center px-4 py-16 md:py-24 bg-cream/50">
         <div className="container mx-auto max-w-4xl">
@@ -43,6 +47,8 @@ const ComingSoon = () => {
           </span>
         </Link>
       </div>
+      
+      <Footer />
     </div>
   );
 };

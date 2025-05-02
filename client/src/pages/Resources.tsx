@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'wouter';
 import { ArrowLeft } from 'lucide-react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Resources = () => {
   return (
@@ -46,6 +47,8 @@ const Resources = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };
