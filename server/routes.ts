@@ -20,6 +20,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.redirect("/thank-you");
     }
   });
+  
+  // Special route for subscribe-thank-you.html
+  app.get("/subscribe-thank-you.html", (req: Request, res: Response) => {
+    const subscribeThankYouPath = path.resolve(process.cwd(), "public", "subscribe-thank-you.html");
+    if (fs.existsSync(subscribeThankYouPath)) {
+      res.sendFile(subscribeThankYouPath);
+    } else {
+      res.redirect("/thank-you");
+    }
+  });
   // API endpoint for subscription
   app.post("/api/subscribe", (req: Request, res: Response) => {
     try {

@@ -67,7 +67,7 @@ const SubscribeSection = () => {
                 className="space-y-4"
                 name="subscribe-secondary" 
                 method="POST" 
-                action="/thank-you.html"
+                action="/subscribe-thank-you.html"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
               >
