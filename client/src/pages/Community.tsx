@@ -145,7 +145,7 @@ const Community = () => {
             {/* CTA Button */}
             <div className="flex justify-center max-w-md mx-auto mb-12">
               <a 
-                href="https://www.facebook.com/share/1DFNGXxVfY/?mibextid=wwXIfr" 
+                href="https://www.facebook.com/share/15Hf4dfwKT/?mibextid=wwXIfr" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-tan-dark hover:bg-charcoal text-white py-3 px-8 rounded-lg transition-colors flex items-center justify-center w-full md:w-auto font-medium shadow-md"
