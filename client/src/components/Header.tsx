@@ -63,34 +63,115 @@ const Header = () => {
         </div>
       </div>
       
-      {/* Mobile menu dropdown */}
+      {/* Full-screen Mobile menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-black bg-opacity-90 backdrop-blur-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-40 md:hidden bg-black bg-opacity-95 backdrop-blur-md flex flex-col items-center justify-center"
           >
-            <div className="container mx-auto px-4 py-4">
-              <nav className="flex flex-col space-y-4">
-                <Link href="/about" className="text-white hover:text-gray-300 transition-colors py-2">
-                  About
+            <div className="relative w-full h-full flex flex-col">
+              {/* Close button */}
+              <div className="absolute top-4 right-4 z-50">
+                <button 
+                  onClick={toggleMenu}
+                  className="text-white p-2 focus:outline-none"
+                  aria-label="Close menu"
+                >
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor" 
+                    className="w-7 h-7"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              
+              {/* Logo on top center */}
+              <div className="mt-10 mb-8 flex justify-center">
+                <Link href="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
+                  <div className="w-16 h-16">
+                    <Logo />
+                  </div>
                 </Link>
-                <Link href="/community" className="text-white hover:text-gray-300 transition-colors py-2">
-                  Our Community
-                </Link>
-                <Link href="/blog" className="text-white hover:text-gray-300 transition-colors py-2">
-                  Blog
-                </Link>
-                <Link href="/resources" className="text-white hover:text-gray-300 transition-colors py-2">
-                  Resources
-                </Link>
-                <Link href="/contact" className="text-white hover:text-gray-300 transition-colors py-2">
-                  Contact
-                </Link>
-              </nav>
+              </div>
+              
+              {/* Centered Navigation Links */}
+              <div className="flex-grow flex items-center justify-center">
+                <nav className="flex flex-col items-center space-y-6 text-center px-4 -mt-8">
+                  <Link 
+                    href="/about" 
+                    className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    About
+                  </Link>
+                  <Link 
+                    href="/community" 
+                    className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Our Community
+                  </Link>
+                  <Link 
+                    href="/blog" 
+                    className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Blog
+                  </Link>
+                  <Link 
+                    href="/resources" 
+                    className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Resources
+                  </Link>
+                  <Link 
+                    href="/contact" 
+                    className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                </nav>
+              </div>
+              
+              {/* Footer with social links - optional */}
+              <div className="mb-10 text-center">
+                <div className="flex justify-center space-x-5 text-white/60">
+                  <a 
+                    href="https://www.instagram.com/priestlydaughter?igsh=MnhyY25sbGVxemE3" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-soft-pink transition-colors"
+                  >
+                    Instagram
+                  </a>
+                  <a 
+                    href="https://www.facebook.com/share/1DFNGXxVfY/?mibextid=wwXIfr" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-soft-pink transition-colors"
+                  >
+                    Facebook
+                  </a>
+                  <a 
+                    href="https://www.youtube.com/channel/UC53UiFAW64n4NvMClDt1-xQ" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-soft-pink transition-colors"
+                  >
+                    YouTube
+                  </a>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
