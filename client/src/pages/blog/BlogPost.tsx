@@ -2,6 +2,7 @@ import React from 'react';
 import { useRoute } from 'wouter';
 import { getBlogPostBySlug } from '../../lib/blog-data';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'wouter';
 
@@ -23,6 +24,7 @@ const BlogPost: React.FC = () => {
             </span>
           </Link>
         </div>
+        <Footer />
       </div>
     );
   }

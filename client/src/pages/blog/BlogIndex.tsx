@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'wouter';
 import { blogPosts } from '../../lib/blog-data';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 const BlogIndex: React.FC = () => {
   return (
@@ -79,6 +80,8 @@ const BlogIndex: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
