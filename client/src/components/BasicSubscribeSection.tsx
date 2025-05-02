@@ -24,7 +24,7 @@ const BasicSubscribeSection = () => {
     setIsSubmitting(true);
     
     // Let the form naturally submit to Netlify and redirect
-    // No need to handle form submission manually as the action="/thank-you.html"
+    // No need to handle form submission manually as the action="/subscribe-thank-you.html"
     // attribute will handle the redirect after successful submission
   };
   
