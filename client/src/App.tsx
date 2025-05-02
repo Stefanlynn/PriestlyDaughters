@@ -26,6 +26,8 @@ function Router() {
       <Route path="/resources" component={Resources} />
       <Route path="/contact" component={Contact} />
       <Route path="/coming-soon" component={ComingSoon} />
+      <Route path="/terms" component={Terms} />
+      <Route path="/privacy" component={Privacy} />
       <Route component={NotFound} />
     </Switch>
   );
