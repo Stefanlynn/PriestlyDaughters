@@ -10,11 +10,26 @@ const Header = () => {
     const newMenuState = !isMenuOpen;
     setIsMenuOpen(newMenuState);
     
-    // Prevent body scroll when menu is open
+    // Prevent body scroll and add additional styles when menu is open
     if (newMenuState) {
+      // Prevent scrolling
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.height = '100%';
+      
+      // Apply more specific styling to ensure content is hidden
+      const rootElement = document.documentElement;
+      rootElement.classList.add('mobile-menu-open');
     } else {
+      // Reset styles when menu closes
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+      
+      const rootElement = document.documentElement;
+      rootElement.classList.remove('mobile-menu-open');
     }
   };
   
@@ -77,8 +92,8 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-0 left-0 w-full h-full z-50 md:hidden bg-black flex flex-col items-center justify-center"
-            style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+            className="mobile-menu fixed inset-0 top-0 left-0 w-screen h-screen z-[1000] md:hidden bg-black flex flex-col items-center justify-center"
+            style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, width: '100vw', height: '100vh', zIndex: 9999 }}
           >
             <div className="relative w-full h-full flex flex-col">
               {/* Close button */}
@@ -102,7 +117,7 @@ const Header = () => {
               
               {/* Logo on top center */}
               <div className="mt-16 mb-12 flex justify-center">
-                <Link href="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/" className="flex items-center" onClick={toggleMenu}>
                   <div className="w-20 h-20">
                     <Logo />
                   </div>
@@ -115,21 +130,21 @@ const Header = () => {
                   <Link 
                     href="/about" 
                     className="text-white hover:text-soft-pink text-2xl transition-colors py-2 font-light tracking-wide"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={toggleMenu}
                   >
                     About
                   </Link>
                   <Link 
                     href="/community" 
                     className="text-white hover:text-soft-pink text-2xl transition-colors py-2 font-light tracking-wide"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={toggleMenu}
                   >
                     Daughters
                   </Link>
                   <Link 
                     href="/blog" 
                     className="text-white hover:text-soft-pink text-2xl transition-colors py-2 font-light tracking-wide"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={toggleMenu}
                   >
                     Blog
                   </Link>
@@ -137,7 +152,7 @@ const Header = () => {
                   <Link 
                     href="/contact" 
                     className="text-white hover:text-soft-pink text-2xl transition-colors py-2 font-light tracking-wide"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={toggleMenu}
                   >
                     Contact
                   </Link>
