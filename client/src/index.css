@@ -113,6 +113,19 @@
   animation: fadeIn 1.5s ease-in-out;
 }
 
+@keyframes slowBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: slowBounce 2s ease-in-out infinite;
+}
+
 .font-sans {
   font-family: 'Montserrat', sans-serif;
 }
