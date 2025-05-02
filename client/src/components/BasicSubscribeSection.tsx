@@ -95,19 +95,27 @@ const BasicSubscribeSection = () => {
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="relative">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Your email address"
-                      className="w-full h-12 px-5 py-3 border border-tan-dark/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-tan-dark/30 focus:border-transparent transition-all"
-                    />
+                    <div className="flex overflow-hidden border-b-2 border-tan-dark/30 hover:border-tan-dark/50 transition-colors focus-within:border-tan-dark">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Your email address"
+                        className="w-full h-12 px-0 py-2 bg-transparent focus:outline-none text-charcoal/90"
+                      />
+                      <div className="flex-shrink-0 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-tan-dark/60" viewBox="0 0 20 20" fill="currentColor">
+                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                   
                   <button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full h-12 bg-tan-dark hover:bg-tan-dark/90 text-white rounded-lg shadow-sm hover:shadow transition-all flex items-center justify-center"
+                    className="w-full h-12 bg-tan-dark hover:bg-tan-dark/90 text-white rounded-full shadow-sm hover:shadow transition-all flex items-center justify-center"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center">
@@ -118,7 +126,7 @@ const BasicSubscribeSection = () => {
                         <span>Subscribing...</span>
                       </span>
                     ) : (
-                      "Subscribe to Updates"
+                      "Subscribe"
                     )}
                   </button>
                   
