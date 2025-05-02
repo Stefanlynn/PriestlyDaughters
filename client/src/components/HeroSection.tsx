@@ -15,28 +15,43 @@ const HeroSection = () => {
     video1.style.opacity = '1';
     video2.style.opacity = '0';
     
-    // Play both videos immediately
+    // Play the first video immediately and prepare the second one
     const playVideos = () => {
+      // Start the first video playing immediately
       video1.play().catch(err => console.error("Video 1 play failed:", err));
-      video2.play().catch(err => console.error("Video 2 play failed:", err));
       
-      // Pause the second video initially
-      video2.pause();
-      // Set its time to just before the end (we'll start it when needed)
+      // Also load the second video, get it buffered and ready, but keep it paused initially
+      video2.load();
       video2.currentTime = 0;
+      
+      // Start its buffering by briefly playing it
+      video2.play()
+        .then(() => {
+          // Then immediately pause it until needed
+          setTimeout(() => {
+            video2.pause();
+          }, 100);
+        })
+        .catch(err => console.error("Video 2 play failed:", err));
     };
     
     video1.addEventListener('canplay', playVideos);
     
-    // When video1 is about to end, start playing video2
+    // When video1 reaches halfway, prepare video2 to be ready
     const handleTimeUpdate1 = () => {
-      // When video1 is 1 second from the end - start transition earlier for seamless switch
-      if (activeVideo === 1 && video1.currentTime > video1.duration - 1) {
-        // Start video2 from the beginning
+      // Start preparing much earlier - at 1/3 of the way through the video
+      if (activeVideo === 1 && video1.currentTime > video1.duration / 3) {
+        // Reset and preload the second video
         video2.currentTime = 0;
         video2.play();
         
-        // Fade in video2, fade out video1 - immediate transition
+        // Keep it hidden until needed
+        video2.style.opacity = '0';
+      }
+      
+      // Actual switch happens when 3 seconds from the end
+      if (activeVideo === 1 && video1.currentTime > video1.duration - 3) {
+        // Immediately make the switch
         video2.style.opacity = '1';
         video1.style.opacity = '0';
         
@@ -45,15 +60,21 @@ const HeroSection = () => {
       }
     };
     
-    // When video2 is about to end, start playing video1
+    // Same process for video2 to video1 transition
     const handleTimeUpdate2 = () => {
-      // When video2 is 1 second from the end - start transition earlier
-      if (activeVideo === 2 && video2.currentTime > video2.duration - 1) {
-        // Start video1 from the beginning
+      // Start preparing much earlier - at 1/3 of the way through the video
+      if (activeVideo === 2 && video2.currentTime > video2.duration / 3) {
+        // Reset and preload the first video
         video1.currentTime = 0;
         video1.play();
         
-        // Fade in video1, fade out video2 - immediate transition
+        // Keep it hidden until needed
+        video1.style.opacity = '0';
+      }
+      
+      // Actual switch happens when 3 seconds from the end
+      if (activeVideo === 2 && video2.currentTime > video2.duration - 3) {
+        // Immediately make the switch
         video1.style.opacity = '1';
         video2.style.opacity = '0';
         
