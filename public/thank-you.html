@@ -96,27 +96,16 @@
     
     .logo-container {
       margin-bottom: 2.5rem;
-      /* We'll use a stylized text as the logo for now */
+      display: flex;
+      justify-content: center;
     }
     
-    .logo-text {
-      font-family: 'Dancing Script', cursive;
-      font-weight: 700;
-      font-size: 2.5rem;
-      color: var(--tan-dark);
-      letter-spacing: 1px;
-      position: relative;
-      display: inline-block;
-    }
-    
-    .logo-text::after {
-      content: '';
-      position: absolute;
-      width: 60%;
-      height: 2px;
-      background-color: var(--soft-pink);
-      bottom: -10px;
-      left: 20%;
+    .logo-image {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,0.05));
     }
     
     h1 {
@@ -217,7 +206,7 @@
 <body>
   <div class="container">
     <div class="logo-container">
-      <span class="logo-text">LOGO</span>
+      <img src="/logo.png" alt="Logo" class="logo-image">
     </div>
     
     <h1>Thank You!</h1>
