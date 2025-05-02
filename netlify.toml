@@ -4,15 +4,15 @@
   # Directory to output the build with client artifacts
   publish = "dist"
 
-# First redirect rule for thank-you.html
+# First redirect rule for thank-you page
 [[redirects]]
-  from = "/thank-you.html"
+  from = "/thank-you"
   to = "/thank-you.html"
   status = 200
 
-# Second redirect rule for subscribe-thank-you.html
+# Second redirect rule for subscribe-thank-you page
 [[redirects]]
-  from = "/subscribe-thank-you.html"
+  from = "/subscribe-thank-you"
   to = "/subscribe-thank-you.html"
   status = 200
 
@@ -37,7 +37,7 @@
     # Use custom email notification template
     template = "email-templates/contact-notification.html"
     # Specify success redirect
-    success_url = "/thank-you.html"
+    success_url = "/thank-you"
   
   # Subscribe form settings
   [forms.subscribe]
