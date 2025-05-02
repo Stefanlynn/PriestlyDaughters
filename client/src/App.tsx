@@ -12,6 +12,8 @@ import Community from "./pages/Community";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
 import ComingSoon from "./pages/ComingSoon";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 function Router() {
   return (
