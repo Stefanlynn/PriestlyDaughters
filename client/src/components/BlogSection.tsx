@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'wouter';
 import { blogPosts } from '../lib/blog-data';
 
@@ -25,8 +25,9 @@ const BlogCard: React.FC<{
         <p className="text-charcoal/80 mb-4 text-sm line-clamp-3 flex-grow">{description}</p>
         <div className="mt-auto pt-3 border-t border-tan-light/30">
           <Link href={`/blog/${slug}`}>
-            <span className="text-tan-dark hover:text-tan-light font-medium text-sm transition-colors cursor-pointer">
-              Read More &rarr;
+            <span className="inline-flex items-center text-tan-dark hover:text-soft-pink transition-colors cursor-pointer text-sm font-medium">
+              Read More
+              <ArrowRight className="w-4 h-4 ml-2" />
             </span>
           </Link>
         </div>
