@@ -1,44 +1,7 @@
 import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-// Blog data with real images
-const blogPosts = [
-  {
-    id: 1,
-    title: "When You Feel Called, But Unqualified",
-    description: "You feel it in your spirit—this pull toward more. Maybe it's starting that thing God's been whispering to you about. Maybe it's stepping into a new level of leadership, purpose, or influence.",
-    coverImage: "/images/blog/blog-1.jpg",
-    slug: "when-you-feel-called-but-unqualified"
-  },
-  {
-    id: 2,
-    title: "The Sacred Work of Slowing Down",
-    description: "Let's be honest: as women, we carry a lot. We manage homes, raise children, lead teams, care for communities, support our spouses, show up for our churches—and still try to carve out time for ourselves.",
-    coverImage: "/images/blog/blog-2.jpg",
-    slug: "the-sacred-work-of-slowing-down"
-  },
-  {
-    id: 3,
-    title: "Becoming Her: The Journey Between Who You Were and Who You're Becoming",
-    description: "There's a version of you that God is shaping—strong, steady, full of wisdom, confident in your identity, and clear about your calling. But between who you've been and who you're becoming… there's a gap.",
-    coverImage: "/images/blog/blog-3.jpg",
-    slug: "becoming-her"
-  },
-  {
-    id: 4,
-    title: "The Pressure to Be Everything, All at Once",
-    description: "There's this unspoken pressure many women carry—to be everything, to everyone, all at once. The perfect mom. The loving wife. The prayer warrior. The helper. The planner. The fixer.",
-    coverImage: "/images/blog/blog-4.jpg",
-    slug: "the-pressure-to-be-everything"
-  },
-  {
-    id: 5,
-    title: "You're Not Behind—You're Being Prepared",
-    description: "Have you ever looked around and felt like everyone else is further ahead? They're launching things, writing books, raising perfect kids, building empires—and you're just trying to survive the week.",
-    coverImage: "/images/blog/blog-5.jpg",
-    slug: "youre-not-behind"
-  }
-];
+import { Link } from 'wouter';
+import { blogPosts } from '../lib/blog-data';
 
 const BlogCard: React.FC<{
   title: string;
@@ -61,9 +24,11 @@ const BlogCard: React.FC<{
         <h3 className="text-lg font-medium mb-3 text-charcoal line-clamp-2 min-h-[3.5rem]">{title}</h3>
         <p className="text-charcoal/80 mb-4 text-sm line-clamp-3 flex-grow">{description}</p>
         <div className="mt-auto pt-3 border-t border-tan-light/30">
-          <a href={`/blog/${slug}`} className="text-tan-dark hover:text-tan-light font-medium text-sm transition-colors">
-            Read More &rarr;
-          </a>
+          <Link href={`/blog/${slug}`}>
+            <span className="text-tan-dark hover:text-tan-light font-medium text-sm transition-colors cursor-pointer">
+              Read More &rarr;
+            </span>
+          </Link>
         </div>
       </div>
     </div>
