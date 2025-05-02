@@ -10,7 +10,7 @@ const Home = () => {
     <>
       <Header />
       <HeroSection />
-      <section className="py-24 bg-cream">
+      <section className="py-24 bg-cream" style={{ transform: 'translateZ(0)' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-2xl md:text-3xl mb-12 text-charcoal font-light leading-relaxed">
