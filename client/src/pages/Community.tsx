@@ -92,7 +92,7 @@ const Community = () => {
                 </p>
                 <Link href="/contact">
                   <span className="inline-flex items-center text-tan-dark hover:text-soft-pink transition-colors cursor-pointer text-sm font-medium">
-                    Connect with Elizabeth →
+                    Connect with Elizabeth
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </span>
                 </Link>
