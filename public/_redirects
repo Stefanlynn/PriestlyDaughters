@@ -5,6 +5,9 @@
 # Redirect default Netlify subdomain to primary domain
 https://priestlydaughters.netlify.app/* https://priestlydaughters.com/:splat 301!
 
+# Redirect thank-you.html to thank-you React route to support form submissions
+/thank-you.html /thank-you 301
+
 # Handle Single Page Application routing
 /* /index.html 200
 

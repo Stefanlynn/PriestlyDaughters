@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import ComingSoon from "./pages/ComingSoon";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import ThankYou from "./pages/ThankYou";
 
 function Router() {
   return (
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/coming-soon" component={ComingSoon} />
       <Route path="/terms" component={Terms} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/thank-you" component={ThankYou} />
       <Route component={NotFound} />
     </Switch>
   );
