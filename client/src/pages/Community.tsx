@@ -21,9 +21,12 @@ const Community = () => {
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-soft-pink/30 to-soft-pink/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl md:text-5xl font-cursive text-charcoal mb-8">
-              You Don't Have to Do This Alone
+            <h1 className="text-3xl md:text-5xl font-cursive text-charcoal mb-4">
+              Daughters
             </h1>
+            <h2 className="text-xl md:text-2xl text-charcoal/70 mb-8">
+              You Don't Have to Do This Alone
+            </h2>
             <p className="text-lg text-charcoal/80 leading-relaxed max-w-3xl mx-auto mb-6">
               Priestly Daughters is more than a ministry—it's a movement of women who are growing, 
               healing, and walking boldly in their calling. We believe in sisterhood rooted in 

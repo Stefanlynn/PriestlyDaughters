@@ -27,7 +27,7 @@ const Header = () => {
               About
             </Link>
             <Link href="/community" className="text-white hover:text-gray-300 transition-colors">
-              Our Community
+              Daughters
             </Link>
             <Link href="/blog" className="text-white hover:text-gray-300 transition-colors">
               Blog
@@ -115,7 +115,7 @@ const Header = () => {
                     className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Our Community
+                    Daughters
                   </Link>
                   <Link 
                     href="/blog" 
