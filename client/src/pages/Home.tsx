@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import HeroSection from '../components/HeroSection';
 import BlogSection from '../components/BlogSection';
+import OptimizedImage from '../components/OptimizedImage';
 import { Link } from "wouter";
 
 const Home = () => {
@@ -93,13 +94,17 @@ const Home = () => {
             <div className="md:w-1/2">
               <div className="relative">
                 <div className="relative rounded-lg overflow-hidden w-full max-w-md mx-auto shadow-xl">
-                  <img 
-                    src="/images/powellfam-16.JPG" 
-                    alt="Elizabeth Powell" 
-                    className="w-full"
-                  />
-                  {/* Black overlay */}
-                  <div className="absolute inset-0 bg-black opacity-20 mix-blend-multiply"></div>
+                  {/* Using OptimizedImage component for better loading */}
+                  <div className="relative">
+                    <OptimizedImage 
+                      src="/images/powellfam-16.JPG" 
+                      alt="Elizabeth Powell" 
+                      className="w-full"
+                      priority={true}
+                    />
+                    {/* Black overlay */}
+                    <div className="absolute inset-0 bg-black opacity-20 mix-blend-multiply"></div>
+                  </div>
                 </div>
                 {/* Decorative element */}
                 <div className="absolute -bottom-5 -right-5 w-1/3 h-1/3 bg-tan-light rounded-lg -z-10"></div>

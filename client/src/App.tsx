@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "./components/ScrollToTop";
+import MediaPreloader from "./components/MediaPreloader";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 import BlogPost from "./pages/blog/BlogPost";
@@ -38,6 +39,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <MediaPreloader />
         <ScrollToTop />
         <Toaster />
         <Router />
