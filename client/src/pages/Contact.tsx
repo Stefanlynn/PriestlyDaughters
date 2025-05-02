@@ -101,9 +101,7 @@ const Contact = () => {
                         <option value="">Select a reason</option>
                         <option value="general">General Inquiry</option>
                         <option value="prayer">Prayer Request</option>
-                        <option value="meetups">Sign Up for Meetups</option>
                         <option value="coaching">Request Coaching</option>
-                        <option value="join">Join the Circle</option>
                         <option value="speaking">Speaking Engagement</option>
                         <option value="other">Other</option>
                       </select>
