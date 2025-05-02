@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priestly Daughters</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 20px; text-align: center; background: #f7f3ee; }
+    .container { max-width: 600px; margin: 0 auto; padding-top: 40px; }
+    h1 { color: #d2afbd; } /* Soft pink color matching site theme */
+    .message { background: white; padding: 20px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Priestly Daughters</h1>
+    <div class="message">
+      <p>This is a placeholder page. The actual website will be built and deployed when connected to Netlify.</p>
+      <p><a href="/admin/">Access Admin Panel</a></p>
+    </div>
+  </div>
+  <script>
+    // Redirect to admin after successful login
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
