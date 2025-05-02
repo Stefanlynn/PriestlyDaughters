@@ -44,6 +44,48 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* About Section */}
+      <section className="py-20 bg-offwhite">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-20">
+            {/* Left side - Text */}
+            <div className="md:w-1/2 max-w-lg">
+              <p className="font-cursive text-3xl md:text-4xl text-charcoal mb-6">
+                Hey there
+              </p>
+              <p className="text-xl md:text-2xl font-light mb-8 text-charcoal">
+                I'm Elizebeth Powell. A woman probably a lot like you.
+              </p>
+              <div className="space-y-6 text-lg text-charcoal/80 font-light">
+                <p>
+                  For years, I served in leadership—at work, in ministry, and in my home—without fully calling myself a leader. But deep down, I've always known I was called to more.
+                </p>
+                <p>
+                  I'm a wife, a mom, and a woman of faith who sees the beauty and complexity in women like you.
+                </p>
+                <p>
+                  And I'm here to help you walk in the purpose God already placed inside you.
+                </p>
+              </div>
+            </div>
+            
+            {/* Right side - Image */}
+            <div className="md:w-1/2">
+              <div className="relative">
+                <img 
+                  src="/images/powellfam-16.JPG" 
+                  alt="Elizabeth Powell" 
+                  className="rounded-lg shadow-xl w-full max-w-md mx-auto"
+                />
+                {/* Decorative element */}
+                <div className="absolute -bottom-5 -right-5 w-1/3 h-1/3 bg-tan-light rounded-lg -z-10"></div>
+                <div className="absolute -top-5 -left-5 w-1/4 h-1/4 border-2 border-tan-dark rounded-lg -z-10"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
