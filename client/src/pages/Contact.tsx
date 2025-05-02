@@ -41,9 +41,9 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Email Us</h3>
                 <p className="text-sm text-charcoal/70 mb-4">For general inquiries and questions</p>
-                <a href="mailto:contact@priestlydaughters.com" className="text-tan-dark hover:underline">
+                <span className="text-tan-dark">
                   contact@priestlydaughters.com
-                </a>
+                </span>
               </div>
               
               {/* Instagram */}
@@ -53,9 +53,9 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Instagram</h3>
                 <p className="text-sm text-charcoal/70 mb-4">Follow for updates and inspiration</p>
-                <a href="https://instagram.com/priestlydaughters" target="_blank" rel="noopener noreferrer" className="text-tan-dark hover:underline">
+                <span className="text-tan-dark">
                   @priestlydaughters
-                </a>
+                </span>
               </div>
               
               {/* Facebook */}
@@ -65,9 +65,9 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Facebook</h3>
                 <p className="text-sm text-charcoal/70 mb-4">Join our community on Facebook</p>
-                <a href="https://facebook.com/priestlydaughters" target="_blank" rel="noopener noreferrer" className="text-tan-dark hover:underline">
+                <span className="text-tan-dark">
                   Priestly Daughters
-                </a>
+                </span>
               </div>
             </div>
             
@@ -79,10 +79,10 @@ const Contact = () => {
               
               {/* Back link */}
               <Link href="/">
-                <a className="inline-flex items-center text-tan-dark/70 hover:text-tan-dark transition-colors">
+                <span className="inline-flex items-center text-tan-dark/70 hover:text-tan-dark transition-colors cursor-pointer">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to Home
-                </a>
+                </span>
               </Link>
             </div>
           </div>

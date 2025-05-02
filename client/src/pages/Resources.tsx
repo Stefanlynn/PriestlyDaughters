@@ -38,10 +38,10 @@ const Resources = () => {
             
             {/* Back link */}
             <Link href="/">
-              <a className="inline-flex items-center text-tan-dark/70 hover:text-tan-dark transition-colors">
+              <span className="inline-flex items-center text-tan-dark/70 hover:text-tan-dark transition-colors cursor-pointer">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Home
-              </a>
+              </span>
             </Link>
           </div>
         </div>
