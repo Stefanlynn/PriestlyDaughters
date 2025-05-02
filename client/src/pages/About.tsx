@@ -27,15 +27,12 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-soft-pink">
       {/* Header is fixed positioned */}
       <Header />
       
-      {/* Empty div to create space between header and content */}
-      <div className="h-[90px] md:h-[90px]"></div>
-      
-      {/* Hero section with pink background and rotating images */}
-      <section className="bg-soft-pink py-16 md:py-28">
+      {/* Hero section with pink background and rotating images - extends to top of page */}
+      <section className="bg-soft-pink pt-[90px] pb-16 md:pt-[90px] md:pb-28">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center gap-12">
             {/* Image gallery with rotation effect */}
