@@ -25,16 +25,21 @@ const Home = () => {
               <p>…circumstances beyond your control have pulled you off course.</p>
             </div>
             
-            <div className="mt-14 space-y-8">
-              <p className="text-xl md:text-2xl text-charcoal">
-                If any of that sounds familiar—you're not broken, and you're not alone.
+            <div className="mt-16">
+              <p className="text-xl md:text-2xl text-charcoal mb-6 font-light">
+                If any of that sounds familiar—
               </p>
-              <p className="text-xl md:text-2xl text-charcoal">
+              <p className="text-2xl md:text-3xl text-charcoal mb-10 font-cursive">
+                you're not broken, and you're not alone.
+              </p>
+              <p className="text-xl md:text-2xl text-charcoal mb-12 font-light">
                 This space was created for women like you.
               </p>
-              <p className="text-xl md:text-2xl text-charcoal font-medium">
-                Women called. Chosen. Ready to grow deeper, rise higher, and walk fully in who God created them to be.
-              </p>
+              <div className="max-w-2xl mx-auto border-t border-b border-charcoal/20 py-8">
+                <p className="text-xl md:text-2xl text-charcoal font-light italic">
+                  Women called. Chosen. Ready to grow deeper, rise higher, and walk fully in who God created them to be.
+                </p>
+              </div>
             </div>
           </div>
         </div>
