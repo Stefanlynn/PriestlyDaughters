@@ -6,9 +6,9 @@ cd "$(dirname "$0")"
 # Remove previous build artifacts
 rm -rf dist site.zip
 
-# Build the client-side application with our Netlify-specific config
+# Build the client-side application with our Netlify config
 echo "Building client application for Netlify..."
-npx vite build --config vite.config.netlify.js
+npx vite build
 
 # Check if build was successful
 if [ ! -d "dist" ]; then
@@ -38,4 +38,4 @@ zip -r ../site.zip *
 cd ..
 
 echo "Build completed successfully!"
-echo "Netlify deployment files prepared! You can now upload site.zip to Netlify."
+echo "Netlify deployment files prepared! You can now upload site.zip to Netlify or deploy directly from GitHub."
