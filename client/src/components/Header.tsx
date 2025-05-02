@@ -8,7 +8,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo on the left */}
           <Link href="/" className="flex items-center">
-            <div className="w-12 h-12">
+            <div className="w-16 h-16 -my-2">
               <Logo />
             </div>
           </Link>
