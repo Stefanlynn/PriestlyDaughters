@@ -116,6 +116,44 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Daughters, You Belong Here Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="font-cursive text-3xl md:text-4xl text-tan-dark mb-6">
+              Daughters, You Belong Here
+            </h2>
+            
+            <p className="text-xl md:text-2xl font-light mb-8 text-charcoal">
+              You don't have to walk this journey alone.
+            </p>
+            
+            <div className="space-y-6 text-lg text-charcoal/80 font-light mb-10">
+              <p>
+                Whether you're discovering your identity, rebuilding your confidence, or stepping into your next season—this space was created with you in mind.
+              </p>
+              <p>
+                Priestly Daughters is a growing sisterhood of women who are becoming, together. Rooted in truth. Set apart with purpose. Rising in grace.
+              </p>
+              <p>
+                Join the community for encouragement, meetups, resources, and real connection with women who get it.
+              </p>
+            </div>
+            
+            <div className="mt-10">
+              <a 
+                href="https://www.facebook.com/groups/priestlydaughterscommunity" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3 bg-soft-pink text-white rounded-full shadow-md hover:shadow-lg transition-all"
+              >
+                Join the Sisterhood
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* Blog Section */}
       <BlogSection />
