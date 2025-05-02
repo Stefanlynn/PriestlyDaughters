@@ -64,23 +64,23 @@
 
   html {
     height: -webkit-fill-available;
+    scroll-behavior: smooth !important; /* Enable smooth scrolling site-wide */
+    -webkit-overflow-scrolling: touch !important; /* Enable momentum scrolling on iOS */
   }
   
   body {
     @apply bg-cream text-charcoal antialiased overflow-x-hidden font-sans;
     min-height: 100vh;
     min-height: -webkit-fill-available;
-    will-change: scroll-position;
-    overscroll-behavior-y: none; /* Prevents bouncing/overscrolling effects */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    overscroll-behavior-y: contain; /* Prevent bounce effects that can cause jank */
+    touch-action: pan-y; /* Optimize touch interactions */
   }
   
-  /* Optimize all sections for better performance */
-  section {
-    transform: translateZ(0);
-    backface-visibility: hidden;
+  /* This helps with scroll jank on mobile */
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -211,29 +211,6 @@
   overflow-y: auto !important; /* Enable scrolling within the menu if needed */
 }
 
-/* Performance optimization for scrolling */
-.is-scrolling * {
-  pointer-events: none !important;
-}
-
-.is-scrolling .scroll-container {
-  will-change: transform;
-}
-
-/* Override pointer-events for essential elements during scrolling */
-.is-scrolling header, 
-.is-scrolling footer,
-.is-scrolling a,
-.is-scrolling button {
-  pointer-events: auto;
-}
-
-/* Main scroll container */
-.scroll-container {
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  min-height: 100vh;
-}
+/* Smooth scrolling for the entire application is enabled on the html element */
 
 
