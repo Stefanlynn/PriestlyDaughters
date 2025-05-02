@@ -2,65 +2,81 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
-media_folder: "public/images/uploads" # Media files will be stored in the repo under static/images/uploads
-public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+# Publish mode enables editorial workflow for content approval
+publish_mode: editorial_workflow
 
+# Media folder (where media will be stored)
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Collections define the structure for different content types
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the UI
-    folder: "content/blog" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Featured Image", name: "featuredImage", widget: "image", required: false}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
-      
-  - name: "pages"
-    label: "Pages"
-    files:
-      - label: "Home Page"
-        name: "home"
-        file: "content/pages/home.md"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Hero Heading", name: "heroHeading", widget: "string"}
-          - {label: "Hero Subheading", name: "heroSubheading", widget: "string"}
-          - {label: "Hero Button Text", name: "heroButtonText", widget: "string", required: false}
-          - {label: "Hero Button Link", name: "heroButtonLink", widget: "string", required: false}
-          - {label: "Hero Background Video", name: "heroBackgroundVideo", widget: "file", required: false}
-          - {label: "Featured Section Title", name: "featuredSectionTitle", widget: "string", required: false}
-          - {label: "Featured Section Content", name: "featuredSectionContent", widget: "markdown", required: false}
-          
-      - label: "About Page"
-        name: "about"
-        file: "content/pages/about.md"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Main Heading", name: "mainHeading", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-          - {label: "Team Section Title", name: "teamSectionTitle", widget: "string", required: false}
-          - {label: "Team Members", name: "teamMembers", widget: "list", required: false, fields: [
-              {label: "Name", name: "name", widget: "string"},
-              {label: "Role", name: "role", widget: "string"},
-              {label: "Photo", name: "photo", widget: "image", required: false},
-              {label: "Bio", name: "bio", widget: "text"}
-            ]}
-
+  # Blog posts collection
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "coverImage", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+  
+  # Resources collection
   - name: "resources"
     label: "Resources"
     folder: "content/resources"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Featured Image", name: "featuredImage", widget: "image", required: false}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Resource Type", name: "resourceType", widget: "select", options: ["e-book", "video", "audio", "printable", "guide", "other"]}
-      - {label: "Resource Link", name: "resourceLink", widget: "string", required: false}
-      - {label: "Featured", name: "featured", widget: "boolean", default: false, required: false}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "coverImage", widget: "image", required: false }
+      - { label: "Content", name: "body", widget: "markdown" }
+      - { label: "Resource Type", name: "type", widget: "select", options: ["devotional", "worksheet", "guide", "video", "audio"] }
+  
+  # Pages collection for editable static pages
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "content/pages/home.md"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "string" }
+          - { label: "Hero Image", name: "heroImage", widget: "image", required: false }
+          - { label: "About Section Title", name: "aboutTitle", widget: "string" }
+          - { label: "About Section Content", name: "aboutContent", widget: "markdown" }
+          - { label: "Featured Content", name: "featured", widget: "list", fields: [
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Description", name: "description", widget: "text" },
+              { label: "Image", name: "image", widget: "image", required: false },
+              { label: "Link", name: "link", widget: "string" }
+            ] }
+      
+      - name: "about"
+        label: "About Page"
+        file: "content/pages/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Main Image", name: "mainImage", widget: "image", required: false }
+          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Team Members", name: "team", widget: "list", fields: [
+              { label: "Name", name: "name", widget: "string" },
+              { label: "Role", name: "role", widget: "string" },
+              { label: "Bio", name: "bio", widget: "text" },
+              { label: "Photo", name: "photo", widget: "image", required: false }
+            ] }
+      
+      - name: "contact"
+        label: "Contact Page"
+        file: "content/pages/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+          - { label: "Form Introduction", name: "formIntro", widget: "text" }
+          - { label: "Contact Email", name: "email", widget: "string" }

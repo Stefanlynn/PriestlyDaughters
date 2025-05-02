@@ -21,28 +21,20 @@ const BasicSubscribeSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Call our API endpoint
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
+      // Using Netlify's form handling
+      const form = e.target as HTMLFormElement;
+      const formData = new FormData(form);
       
-      const data = await response.json();
+      // Netlify will automatically process this submission since the form has data-netlify="true"
+      // and the form-name hidden input
+      setMessage('Thank you for subscribing!');
+      setMessageType('success');
+      setEmail('');
+      form.reset();
       
-      if (response.ok) {
-        setMessage(data.message || 'Thank you for subscribing!');
-        setMessageType('success');
-        setEmail('');
-      } else {
-        setMessage(data.message || 'Something went wrong. Please try again.');
-        setMessageType('error');
-      }
     } catch (error) {
       console.error('Subscription error:', error);
-      setMessage('Network error. Please try again later.');
+      setMessage('Something went wrong. Please try again.');
       setMessageType('error');
     } finally {
       setIsSubmitting(false);
