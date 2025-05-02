@@ -194,8 +194,4 @@
   z-index: 9999 !important;
 }
 
-/* Video fade transition for smoother looping */
-.transition-opacity {
-  transition: opacity 150ms ease;
-  will-change: opacity;
-}
+
