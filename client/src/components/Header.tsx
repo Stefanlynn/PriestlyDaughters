@@ -32,9 +32,7 @@ const Header = () => {
             <Link href="/blog" className="text-white hover:text-gray-300 transition-colors">
               Blog
             </Link>
-            <Link href="/resources" className="text-white hover:text-gray-300 transition-colors">
-              Resources
-            </Link>
+
             <Link href="/contact" className="text-white hover:text-gray-300 transition-colors">
               Contact
             </Link>
@@ -126,13 +124,7 @@ const Header = () => {
                   >
                     Blog
                   </Link>
-                  <Link 
-                    href="/resources" 
-                    className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Resources
-                  </Link>
+
                   <Link 
                     href="/contact" 
                     className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
