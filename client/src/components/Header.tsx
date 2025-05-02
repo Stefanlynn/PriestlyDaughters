@@ -3,7 +3,7 @@ import { Link } from 'wouter';
 
 const Header = () => {
   return (
-    <header className="fixed top-0 w-full z-50 bg-cream bg-opacity-70 backdrop-blur-sm">
+    <header className="fixed top-0 w-full z-50 bg-black bg-opacity-40 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           {/* Logo on the left */}
@@ -15,22 +15,22 @@ const Header = () => {
           
           {/* Navigation on the right */}
           <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="text-charcoal hover:text-gray-500 transition-colors">
+            <Link href="/" className="text-white hover:text-gray-300 transition-colors">
               Home
             </Link>
-            <Link href="/about" className="text-charcoal hover:text-gray-500 transition-colors">
+            <Link href="/about" className="text-white hover:text-gray-300 transition-colors">
               About
             </Link>
-            <Link href="/services" className="text-charcoal hover:text-gray-500 transition-colors">
+            <Link href="/services" className="text-white hover:text-gray-300 transition-colors">
               Services
             </Link>
-            <Link href="/contact" className="text-charcoal hover:text-gray-500 transition-colors">
+            <Link href="/contact" className="text-white hover:text-gray-300 transition-colors">
               Contact
             </Link>
           </nav>
           
           {/* Menu button (2 lines) */}
-          <button className="text-charcoal">
+          <button className="text-white">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
             </svg>
