@@ -7,7 +7,15 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    const newMenuState = !isMenuOpen;
+    setIsMenuOpen(newMenuState);
+    
+    // Prevent body scroll when menu is open
+    if (newMenuState) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   };
   
   return (
@@ -68,12 +76,13 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-40 md:hidden bg-black bg-opacity-95 backdrop-blur-md flex flex-col items-center justify-center"
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 top-0 left-0 w-full h-full z-50 md:hidden bg-black flex flex-col items-center justify-center"
+            style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
           >
             <div className="relative w-full h-full flex flex-col">
               {/* Close button */}
-              <div className="absolute top-4 right-4 z-50">
+              <div className="absolute top-6 right-6 z-50">
                 <button 
                   onClick={toggleMenu}
                   className="text-white p-2 focus:outline-none"
@@ -84,7 +93,7 @@ const Header = () => {
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor" 
-                    className="w-7 h-7"
+                    className="w-8 h-8"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -92,34 +101,34 @@ const Header = () => {
               </div>
               
               {/* Logo on top center */}
-              <div className="mt-10 mb-8 flex justify-center">
+              <div className="mt-16 mb-12 flex justify-center">
                 <Link href="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
-                  <div className="w-16 h-16">
+                  <div className="w-20 h-20">
                     <Logo />
                   </div>
                 </Link>
               </div>
               
               {/* Centered Navigation Links */}
-              <div className="flex-grow flex items-center justify-center">
-                <nav className="flex flex-col items-center space-y-6 text-center px-4 -mt-8">
+              <div className="flex-grow flex flex-col items-center justify-center">
+                <nav className="flex flex-col items-center space-y-8 text-center px-4">
                   <Link 
                     href="/about" 
-                    className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
+                    className="text-white hover:text-soft-pink text-2xl transition-colors py-2 font-light tracking-wide"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     About
                   </Link>
                   <Link 
                     href="/community" 
-                    className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
+                    className="text-white hover:text-soft-pink text-2xl transition-colors py-2 font-light tracking-wide"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Daughters
                   </Link>
                   <Link 
                     href="/blog" 
-                    className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
+                    className="text-white hover:text-soft-pink text-2xl transition-colors py-2 font-light tracking-wide"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Blog
@@ -127,7 +136,7 @@ const Header = () => {
 
                   <Link 
                     href="/contact" 
-                    className="text-white hover:text-soft-pink text-xl transition-colors py-2 font-light tracking-wide"
+                    className="text-white hover:text-soft-pink text-2xl transition-colors py-2 font-light tracking-wide"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Contact
@@ -135,9 +144,9 @@ const Header = () => {
                 </nav>
               </div>
               
-              {/* Footer with social links - optional */}
-              <div className="mb-10 text-center">
-                <div className="flex justify-center space-x-5 text-white/60">
+              {/* Footer with social links */}
+              <div className="mb-16 text-center">
+                <div className="flex justify-center space-x-8 text-white/70 text-sm">
                   <a 
                     href="https://www.instagram.com/priestlydaughter?igsh=MnhyY25sbGVxemE3" 
                     target="_blank" 
