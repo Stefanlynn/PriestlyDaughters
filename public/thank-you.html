@@ -2,10 +2,158 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Thank You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Priestly Daughters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-cream: #F9F6F0;
+      --color-tan-light: #E8D8C4;
+      --color-tan-dark: #C8A287;
+      --color-soft-pink: #F9E5E4;
+      --color-charcoal: #3A3A3A;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--color-cream);
+      color: var(--color-charcoal);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .header {
+      background-color: rgba(249, 246, 240, 0.9);
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+      color: var(--color-tan-dark);
+      text-decoration: none;
+    }
+    
+    .main {
+      flex-grow: 1;
+      padding-top: 6rem;
+      padding-bottom: 3rem;
+    }
+    
+    .thank-you-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 600px;
+      text-align: center;
+    }
+    
+    .thank-you-card h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5rem;
+      color: var(--color-tan-dark);
+      margin-bottom: 1rem;
+    }
+    
+    .thank-you-card p {
+      margin-bottom: 1.5rem;
+      color: rgba(58, 58, 58, 0.8);
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--color-tan-dark);
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
+    
+    .btn:hover {
+      background-color: rgba(200, 162, 135, 0.9);
+    }
+    
+    .footer {
+      background-color: white;
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(58, 58, 58, 0.7);
+    }
+    
+    .logo-small {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      color: var(--color-tan-dark);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    @media (max-width: 768px) {
+      .thank-you-card {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+      
+      .thank-you-card h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Thanks for contacting us!</h1>
-  <p>Your message has been received. We'll respond soon.</p>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="/" class="logo">Priestly Daughters</a>
+      </div>
+    </div>
+  </header>
+  
+  <main class="main">
+    <div class="container">
+      <div class="thank-you-card">
+        <h1>Thank You!</h1>
+        <p>Your message has been received. We appreciate you reaching out and will respond to you as soon as possible.</p>
+        <a href="/" class="btn">Return to Homepage</a>
+      </div>
+    </div>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <span class="logo-small">Priestly Daughters</span>
+      <p>&copy; 2025 Priestly Daughters. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
