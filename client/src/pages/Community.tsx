@@ -98,7 +98,7 @@ const Community = () => {
                   Have a prayer request or just need a safe space to be heard? Submit a request or join 
                   our prayer thread. You're not in this alone.
                 </p>
-                <Link href="#">
+                <Link href="/contact">
                   <span className="inline-flex items-center text-tan-dark hover:text-soft-pink transition-colors cursor-pointer text-sm font-medium">
                     Submit a Prayer Request
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -173,7 +173,7 @@ const Community = () => {
                 Request Coaching
               </a>
               <a 
-                href="#" 
+                href="/contact" 
                 className="bg-white hover:bg-cream transition-colors text-charcoal py-3 px-5 rounded-lg border border-soft-pink/30 flex items-center justify-center"
               >
                 <BookHeart className="w-5 h-5 mr-2" />
