@@ -15,6 +15,7 @@ echo "Copying Netlify configuration files..."
 cp public/_redirects dist/ 2>/dev/null || echo "No _redirects file found"
 cp public/404.html dist/ 2>/dev/null || echo "No 404.html file found"
 cp public/form-fallback.html dist/ 2>/dev/null || echo "No form-fallback.html file found"
+cp public/thank-you.html dist/ 2>/dev/null || cp thank-you.html dist/ 2>/dev/null || echo "No thank-you.html file found"
 
 # Move admin folder to dist
 echo "Copying Netlify CMS admin folder..."

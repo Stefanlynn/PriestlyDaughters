@@ -68,9 +68,12 @@ const Contact = () => {
                 
                 {/* Contact form integrated with Netlify */}
                 <div className="bg-cream/30 p-8 rounded-xl shadow-sm border border-soft-pink/10">
-                  <form name="contact" method="POST" data-netlify="true" className="space-y-6">
+                  <form name="contact" method="POST" data-netlify="true" action="/thank-you.html" data-netlify-honeypot="bot-field" className="space-y-6">
                     <input type="hidden" name="form-name" value="contact" />
                     <input type="hidden" name="recipient" value="Priestlydaughter12@gmail.com" />
+                    <p className="hidden">
+                      <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
