@@ -36,12 +36,9 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative min-h-screen flex items-center justify-center">
         <div className="text-center mt-16">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-cursive text-white tracking-wider mb-6 handwriting">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-cursive text-white tracking-wider handwriting">
             Priestly Daughters
           </h1>
-          <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto opacity-90 animate-fade-in" style={{animationDelay: '3s'}}>
-            Elegance and Grace
-          </p>
         </div>
       </div>
     </section>
