@@ -1,21 +1,36 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
+import { Link } from "wouter";
+import { ArrowLeft } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
-      <Card className="w-full max-w-md mx-4">
-        <CardContent className="pt-6">
-          <div className="flex mb-4 gap-2">
-            <AlertCircle className="h-8 w-8 text-red-500" />
-            <h1 className="text-2xl font-bold text-gray-900">404 Page Not Found</h1>
+    <div className="min-h-screen bg-cream flex flex-col">
+      <Header />
+      
+      <div className="flex-grow flex items-center justify-center py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-lg mx-auto text-center">
+            <h1 className="text-3xl md:text-5xl font-cursive text-tan-dark mb-6">Page Not Found</h1>
+            
+            <div className="h-px w-24 bg-soft-pink/50 mx-auto mb-8"></div>
+            
+            <p className="text-lg text-charcoal/80 mb-12">
+              We couldn't find the page you're looking for. It might have been moved, 
+              renamed, or may not exist anymore.
+            </p>
+            
+            <Link href="/">
+              <span className="inline-flex items-center text-soft-pink hover:text-soft-pink/80 transition-colors cursor-pointer font-medium">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Return to Homepage
+              </span>
+            </Link>
           </div>
-
-          <p className="mt-4 text-sm text-gray-600">
-            Did you forget to add the page to the router?
-          </p>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
+      
+      <Footer />
     </div>
   );
 }
