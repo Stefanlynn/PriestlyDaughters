@@ -4,7 +4,33 @@
   # Directory to output the build with client artifacts
   publish = "dist"
 
-# SPA routes are handled by the /* redirect below
+# First, let static assets pass through (not handled by SPA routing)
+[[redirects]]
+  from = "/preview.jpg"
+  to = "/preview.jpg"
+  status = 200
+
+# Allow images pass through
+[[redirects]]
+  from = "/*.jpg"
+  to = "/:splat.jpg"
+  status = 200
+
+[[redirects]]
+  from = "/*.png"
+  to = "/:splat.png"
+  status = 200
+
+[[redirects]]
+  from = "/*.svg"
+  to = "/:splat.svg"
+  status = 200
+
+# Also allow other static assets to pass through
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
 
 # Then handle all other routes with SPA routing
 [[redirects]]
