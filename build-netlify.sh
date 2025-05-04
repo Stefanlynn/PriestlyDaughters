@@ -21,6 +21,15 @@ echo "Copying thank-you pages..."
 cp public/thank-you.html dist/ 2>/dev/null || echo "No thank-you.html file found"
 cp public/subscribe-thank-you.html dist/ 2>/dev/null || echo "No subscribe-thank-you.html file found"
 
+# Ensure social media preview image is copied (outside of Vite's asset pipeline)
+echo "Copying social media preview image..."
+if [ -f "client/public/preview.jpg" ]; then
+  cp client/public/preview.jpg dist/
+  echo "Preview image copied successfully"
+else
+  echo "Warning: preview.jpg not found in client/public directory"
+fi
+
 # Move admin folder to dist
 echo "Copying Netlify CMS admin folder..."
 if [ -d "public/admin" ]; then
